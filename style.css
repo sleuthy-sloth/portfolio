@@ -414,3 +414,74 @@ section { width: 100%; }
     gap: 32px;
   }
 }
+
+/* ── Contact ───────────────────────────────────────── */
+#contact { background: var(--color-dark); }
+
+.contact-inner { text-align: center; }
+
+.label--light { color: var(--color-accent); }
+
+.section-heading--light { color: #ffffff; }
+
+.contact-sub {
+  font-size: 16px;
+  color: #999;
+  max-width: 480px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.contact-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-accent {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 12px 28px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-accent:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-ghost {
+  border: 2px solid #444;
+  color: #999;
+  padding: 12px 28px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-ghost:hover {
+  border-color: #999;
+  color: #fff;
+}
+
+/* ── Footer ────────────────────────────────────────── */
+#contact .section-inner {
+  padding-bottom: 48px;
+}
+
+#contact::after {
+  content: '© ' attr(data-year) ' [Your Name]. All rights reserved.';
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  padding: 20px 24px 40px;
+  border-top: 1px solid #222;
+}

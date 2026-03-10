@@ -30,3 +30,7 @@ navLinks?.querySelectorAll('a').forEach(a => {
     hamburger?.setAttribute('aria-expanded', 'false');
   });
 });
+
+// Set current year in footer
+const contact = document.getElementById('contact');
+if (contact) contact.setAttribute('data-year', new Date().getFullYear());
