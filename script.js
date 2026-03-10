@@ -1,6 +1,8 @@
 // Smooth scroll for nav links (CSS scroll-behavior handles most cases,
 // this ensures offset for fixed nav)
-const NAV_HEIGHT = 64;
+const NAV_HEIGHT = parseInt(
+  getComputedStyle(document.documentElement).getPropertyValue('--nav-height')
+);
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
