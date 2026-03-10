@@ -485,3 +485,22 @@ section { width: 100%; }
   padding: 20px 24px 40px;
   border-top: 1px solid #222;
 }
+
+/* ── Scroll Reveal ─────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Active Nav ────────────────────────────────────── */
+.nav-links a.active { color: var(--color-accent); }
