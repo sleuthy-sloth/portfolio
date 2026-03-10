@@ -31,9 +31,20 @@ navLinks?.querySelectorAll('a').forEach(a => {
   });
 });
 
+// Show real photo when it loads; show placeholder if it fails
+const profilePhoto = document.getElementById('profile-photo');
+if (profilePhoto) {
+  profilePhoto.addEventListener('load', () => {
+    profilePhoto.closest('.about-photo').classList.add('has-photo');
+  });
+  profilePhoto.addEventListener('error', () => {
+    profilePhoto.closest('.about-photo').classList.remove('has-photo');
+  });
+}
+
 // Set current year in footer
-const contact = document.getElementById('contact');
-if (contact) contact.setAttribute('data-year', new Date().getFullYear());
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
 
 // Scroll reveal — fade sections in as they enter viewport
 const revealEls = document.querySelectorAll('.project-card, .skill-group, .about-grid');

@@ -238,6 +238,10 @@ section { width: 100%; }
   text-transform: uppercase;
 }
 
+/* Hide placeholder once real photo loads */
+.about-photo.has-photo .photo-placeholder { display: none; }
+.about-photo:not(.has-photo) #profile-photo { display: none; }
+
 .about-bio {
   font-size: 16px;
   color: var(--color-text-muted);
@@ -476,9 +480,7 @@ section { width: 100%; }
   padding-bottom: 48px;
 }
 
-#contact::after {
-  content: '© ' attr(data-year) ' [Your Name]. All rights reserved.';
-  display: block;
+.site-footer {
   text-align: center;
   font-size: 12px;
   color: #555;
