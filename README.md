@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio site for Steven Koehl. USAF TSgt, avionics technician, AI enthusiast, game developer.
+Personal portfolio site for Steven. USAF TSgt, avionics technician, AI enthusiast, game developer.
 
 ## Tech Stack
 
