@@ -1,15 +1,10 @@
-# Personal Portfolio
+# Portfolio
 
-Personal portfolio website — pure HTML/CSS/JS, no build step required.
+Personal portfolio site for Steven Koehl. USAF TSgt, avionics technician, AI enthusiast, game developer.
 
-## Editing Content
+## Tech Stack
 
-All content is in `index.html`. Search for `[` to find all placeholder text.
-Replace photo by adding `assets/photo.jpg`.
-Replace CV by adding `assets/cv.pdf`.
+- React 19 + Vite 8
+- TailwindCSS 4
 
-## Deployment
-
-**GitHub Pages:** Push to GitHub, enable Pages in repo settings, set source to `main` branch root.
-
-**Netlify:** Drag the project folder into app.netlify.com/drop.
+Getting Started: `npm install && npm run dev`
