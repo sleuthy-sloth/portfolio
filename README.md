@@ -1,10 +1,16 @@
 # Portfolio
 
-Personal portfolio site for Steven. USAF TSgt, avionics technician, AI enthusiast, game developer.
+My personal portfolio site. USAF TSgt, avionics tech, AI nerd, game developer. Retiring in 2028 and figuring out what's next.
 
-## Tech Stack
+## Tech
 
-- React 19 + Vite 8
-- TailwindCSS 4
+React 19, Vite 8, TailwindCSS 4.
 
-Getting Started: `npm install && npm run dev`
+```bash
+npm install
+npm run dev
+```
+
+## License
+
+CC BY-NC 4.0.
