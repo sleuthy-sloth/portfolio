@@ -85,3 +85,22 @@ const sectionObserver = new IntersectionObserver(entries => {
 }, { rootMargin: '-40% 0px -55% 0px' });
 
 sections.forEach(s => sectionObserver.observe(s));
+
+// Dark mode toggle — persists to localStorage
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+themeToggle?.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
+});
