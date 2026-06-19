@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Steven Koehl — Aeronautical Engineer</title>
-  <meta name="description" content="Professional portfolio of Steven Koehl, USAF Officer and Aeronautical Engineer specializing in space systems." />
+  <title>Steven Koehl — Software Developer & USAF Technical Sergeant</title>
+  <meta name="description" content="Steven Koehl — USAF Technical Sergeant, M.S. Aeronautical Engineering (ERAU), transitioning to software development via SkillBridge. Building open-source tools for maintenance ops and brain training." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Steven Koehl — Software Developer & USAF Technical Sergeant" />
+  <meta property="og:description" content="USAF TSgt transitioning to software development via SkillBridge. Building open-source tools for maintenance ops and brain training." />
+  <meta property="og:url" content="https://sleuthy-sloth.github.io/portfolio/" />
+  <meta property="og:image" content="https://sleuthy-sloth.github.io/portfolio/assets/photo.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Steven Koehl — Software Developer & USAF Technical Sergeant" />
+  <meta name="twitter:description" content="USAF TSgt transitioning to software development via SkillBridge. Building open-source tools for maintenance ops and brain training." />
+  <meta name="twitter:image" content="https://sleuthy-sloth.github.io/portfolio/assets/photo.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e63946'/><text x='50' y='72' font-size='60' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'>S</text></svg>" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
@@ -29,13 +46,13 @@
   <main>
     <section id="hero">
   <div class="hero-inner">
-    <p class="label">Aeronautical Engineer · USAF Officer</p>
-    <h1 class="hero-heading">Space Systems.<br>Mission Ready.</h1>
+    <p class="label">Software Developer · USAF Technical Sergeant</p>
+    <h1 class="hero-heading">From Flightlines<br>To Code.</h1>
     <div class="hero-divider"></div>
     <p class="hero-sub">
-      M.S. Aeronautical Engineering with a focus in Space Studies,
-      Embry-Riddle Aeronautical University. Translating deep technical
-      expertise into aerospace solutions that matter.
+      M.S. Aeronautical Engineering, Embry-Riddle Aeronautical University.
+      18 years fixing jets and leading airmen — now building open-source software
+      through the DoD SkillBridge program. This is where both sides of the story live.
     </p>
     <div class="hero-ctas">
       <a href="#projects" class="btn btn-primary">See My Work</a>
@@ -55,11 +72,13 @@
       <div class="about-content">
         <p class="label">About Me</p>
         <p class="about-bio">
-          Strategic aerospace engineer and USAF professional with 18 years of experience spanning
+          USAF Technical Sergeant and avionics technician with 18 years of experience spanning
           circuit-level maintenance, program management, and technical instruction. I drive readiness
           and quality through data-driven leadership — managing $35M in assets, recovering $7M in
           fleet costs through deficiency reporting, and training 800+ students with a 92% pass rate.
-          Currently serving as Senior AFREP Technician and AI Developmental Lead at Fairchild AFB.
+          Currently serving as Senior AFREP Technician and AI Developmental Lead at Fairchild AFB,
+          while building open-source software through the DoD SkillBridge program ahead of my
+          June 2028 retirement.
         </p>
         <div class="about-stats">
           <div class="stat">
@@ -68,7 +87,7 @@
           </div>
           <div class="stat">
             <span class="stat-value">M.S.</span>
-            <span class="stat-label">Aeronautical Eng.</span>
+            <span class="stat-label">Aero Engineering</span>
           </div>
           <div class="stat">
             <span class="stat-value">ERAU</span>
@@ -81,29 +100,62 @@
 </section>
     <section id="projects">
   <div class="section-inner">
-    <p class="label">Selected Projects</p>
-    <h2 class="section-heading">Engineering Work</h2>
+    <p class="label">Selected Work</p>
+    <h2 class="section-heading">Projects</h2>
+
+    <p class="projects-subsection-title">Software Projects</p>
     <div class="projects-grid">
 
       <article class="project-card project-card--featured">
-        <p class="project-category">Space Systems</p>
-        <h3 class="project-title">Mars Mission Simulation</h3>
+        <p class="project-category">Brain Training</p>
+        <h3 class="project-title">NeuralPulse</h3>
         <p class="project-desc">
-          Interactive 3D rocket launch and Mars transit simulator with configurable mission
-          parameters — launch speed, trajectory, fuel load, thrust, and course corrections.
-          Built with Three.js. NASA Mission Control aesthetic.
+          Open-source brain training web app — think Elevate or Lumosity, but free, open, and
+          playable in your browser. 8+ brain games, daily challenges (Wordle-style), stats
+          dashboard with radar charts and calendar heatmap. Offline-first PWA with optional
+          cloud sync via Supabase.
         </p>
         <ul class="project-tags">
-          <li>Three.js</li>
-          <li>Orbital Mechanics</li>
-          <li>JavaScript</li>
-          <li>3D Simulation</li>
+          <li>Next.js 16</li>
+          <li>TypeScript</li>
+          <li>Supabase</li>
+          <li>Tailwind CSS</li>
+          <li>PWA</li>
         </ul>
-        <a href="https://sleuthy-sloth.github.io/mars-sim/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Launch Simulator</a>
+        <div class="project-links">
+          <a href="https://sleuthy-sloth.github.io/NeuralPulse/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a href="https://github.com/sleuthy-sloth/NeuralPulse" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Source Code</a>
+        </div>
       </article>
 
       <article class="project-card project-card--featured">
-        <p class="project-category">AI & Emerging Technology</p>
+        <p class="project-category">Maintenance Operations</p>
+        <h3 class="project-title">92 AMXS Tracker</h3>
+        <p class="project-desc">
+          Full-stack maintenance management platform for the 92nd Aircraft Maintenance Squadron.
+          Replaces paper logbooks and spreadsheets with a real-time command center — 16 pages,
+          AI-powered OCR scanning of AF Forms, role-based access control, offline PWA support.
+        </p>
+        <ul class="project-tags">
+          <li>React 19</li>
+          <li>TypeScript</li>
+          <li>Firebase</li>
+          <li>AI / OCR</li>
+          <li>PWA</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://sleuthy-sloth.github.io/92-AMXS-Tracker/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a href="https://github.com/sleuthy-sloth/92-AMXS-Tracker" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Source Code</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="projects-subsection-title">Military Achievements</p>
+    <div class="projects-grid">
+
+      <article class="project-card project-card--featured">
+        <p class="project-category">AI &amp; Emerging Technology</p>
         <h3 class="project-title">AI Developmental Lead Initiative</h3>
         <p class="project-desc">
           Leading Fairchild AFB's exploration and integration of AI-driven tools into aerospace
@@ -152,8 +204,8 @@
       </article>
 
       <article class="project-card">
-        <p class="project-category">Education & Training</p>
-        <h3 class="project-title">Electronics & AFREP Training Curriculum</h3>
+        <p class="project-category">Education &amp; Training</p>
+        <h3 class="project-title">Electronics &amp; AFREP Training Curriculum</h3>
         <p class="project-desc">
           Authored and delivered 300 hours of instructional material on complex electronics,
           micro-miniature soldering, and component-level diagnostics for the USAF at Sheppard AFB.
@@ -177,26 +229,41 @@
     <div class="skills-grid">
 
       <div class="skill-group">
-        <h3 class="skill-group-title">Engineering</h3>
+        <h3 class="skill-group-title">Software Development</h3>
+        <ul class="skill-list">
+          <li>TypeScript / JavaScript</li>
+          <li>React 19 / Next.js 16</li>
+          <li>Tailwind CSS / Vite</li>
+          <li>Firebase / Supabase</li>
+          <li>Zustand / IndexedDB</li>
+          <li>PWA / Workbox</li>
+          <li>Vitest / Testing Library</li>
+          <li>Git / GitHub Actions CI/CD</li>
+          <li>Zod / jsPDF / SheetJS</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3 class="skill-group-title">Avionics &amp; Engineering</h3>
         <ul class="skill-list">
           <li>Aerospace Maintenance</li>
           <li>Micro-Miniature Circuit Card Repair</li>
           <li>Component-Level Diagnostics</li>
-          <li>Soldering & Circuit Analysis</li>
+          <li>Soldering &amp; Circuit Analysis</li>
           <li>Aeronautics</li>
           <li>AutoCAD</li>
         </ul>
       </div>
 
       <div class="skill-group">
-        <h3 class="skill-group-title">Software & Tools</h3>
+        <h3 class="skill-group-title">Tools &amp; Systems</h3>
         <ul class="skill-list">
-          <li>Microsoft Office Suite</li>
           <li>ETIMS / Technical Orders</li>
           <li>JDRS Deficiency Reporting</li>
           <li>Cloud Computing</li>
-          <li>Analytical & Data Tools</li>
           <li>AI Integration</li>
+          <li>Microsoft Office Suite</li>
+          <li>Analytical &amp; Data Tools</li>
         </ul>
       </div>
 
@@ -206,7 +273,7 @@
           <li>Program Management</li>
           <li>Contract Oversight (COR)</li>
           <li>Instructional System Design</li>
-          <li>Team Building & Mentorship</li>
+          <li>Team Building &amp; Mentorship</li>
           <li>Continuous Improvement</li>
           <li>Risk Mitigation</li>
         </ul>
@@ -220,7 +287,7 @@
     <p class="label label--light">Get In Touch</p>
     <h2 class="section-heading section-heading--light">Let's Connect</h2>
     <p class="contact-sub">
-      Open to aerospace research opportunities, engineering roles, and professional collaboration.
+      Open to software development opportunities, engineering roles, and professional collaboration.
     </p>
     <div class="contact-links">
       <a href="mailto:spkoehl@gmail.com" class="btn btn-accent">Email Me</a>

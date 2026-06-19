@@ -363,8 +363,42 @@ section { width: 100%; }
   border-radius: 2px;
 }
 
+/* ── Project Subsections ───────────────────────────── */
+.projects-subsection-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 56px;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.projects-subsection-title:first-of-type {
+  margin-top: 0;
+}
+
+/* ── Project Links ─────────────────────────────────── */
+.project-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.project-links .btn {
+  padding: 10px 20px;
+  font-size: 11px;
+}
+
 @media (max-width: 768px) {
   .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 
 /* ── Skills ────────────────────────────────────────── */
@@ -372,7 +406,7 @@ section { width: 100%; }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 40px;
 }
 
@@ -412,12 +446,7 @@ section { width: 100%; }
   border-radius: 50%;
 }
 
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
+/* (mobile skills handled by auto-fit grid above) */
 
 /* ── Contact ───────────────────────────────────────── */
 #contact { background: var(--color-dark); }

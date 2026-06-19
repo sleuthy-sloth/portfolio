@@ -1,31 +1,31 @@
 # Portfolio
 
-> Personal portfolio site. USAF Technical Sergeant, avionics technician, AI infrastructure builder, game developer. Retiring in 2028 and building what comes next.
+> Personal portfolio site. USAF Technical Sergeant, avionics technician, M.S. Aeronautical Engineering, software developer in transition. Retiring June 2028 and building what comes next.
 
-This site collects my projects, writing, and professional background. I've spent 18 years fixing jets and leading airmen, and the last two years building AI agent infrastructure, games, and tools on the side. This is where both sides of that story live.
+This site collects my projects, skills, and professional background. 18 years fixing jets and leading airmen, now building open-source software through the DoD SkillBridge program.
 
 ---
 
 ## What's On It
 
-- **Projects** — Live demos and repos for everything I've built
-- **Skills** — AFSC 2A974 translated to civilian terms
-- **Writing** — About military transition, AI, and building things
-- **Contact** — Because networking starts before the retirement ceremony
+- **Software Projects** — NeuralPulse (brain training) and 92 AMXS Tracker (maintenance ops)
+- **Military Achievements** — PQDR program, $35M management, AI lead initiative, training curriculum
+- **Skills** — Software development stack + avionics + leadership
+- **Contact** — Email, LinkedIn, GitHub
 
 ---
 
 ## Tech Stack
 
-React 19, Vite 8, TailwindCSS 4. Deployed to GitHub Pages.
+Pure HTML/CSS/JS — no framework, no build step, no dependencies. Deployed to GitHub Pages.
 
 ```bash
-npm install
-npm run dev
+# Just open index.html in a browser, or serve locally:
+python3 -m http.server 8000
 ```
 
 ---
 
 ## License
 
-CC BY-NC 4.0.
+CC BY-NC 4.0 — see [LICENSE](LICENSE).
