@@ -32,14 +32,21 @@ navLinks?.querySelectorAll('a').forEach(a => {
 });
 
 // Show real photo when it loads; show placeholder if it fails
+// Handles the cached-image race: if the image is already complete,
+// the 'load' event fires before we can attach a listener.
 const profilePhoto = document.getElementById('profile-photo');
 if (profilePhoto) {
-  profilePhoto.addEventListener('load', () => {
-    profilePhoto.closest('.about-photo').classList.add('has-photo');
-  });
-  profilePhoto.addEventListener('error', () => {
-    profilePhoto.closest('.about-photo').classList.remove('has-photo');
-  });
+  const aboutPhoto = profilePhoto.closest('.about-photo');
+  if (profilePhoto.complete && profilePhoto.naturalWidth > 0) {
+    aboutPhoto.classList.add('has-photo');
+  } else {
+    profilePhoto.addEventListener('load', () => {
+      aboutPhoto.classList.add('has-photo');
+    });
+    profilePhoto.addEventListener('error', () => {
+      aboutPhoto.classList.remove('has-photo');
+    });
+  }
 }
 
 // Set current year in footer
