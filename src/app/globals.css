@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* ── Portfolio Design System ──
+   Two-identity site: Engineering (red accent) & Writing (gold accent)
+   Phase 2: Next.js 16 + Tailwind v4 migration from Phase 1 static HTML
+*/
+
+@theme inline {
+  /* Engineering palette */
+  --color-accent: #e63946;
+  --color-accent-hover: #c1121f;
+
+  /* Writing palette (from Memoria Aeterna cover) */
+  --color-gold: #c9a227;
+  --color-gold-light: #d4af37;
+  --color-midnight: #0d1b2a;
+  --color-midnight-alt: #1b2838;
+
+  /* Fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+
+  /* Shared spacing */
+  --nav-height: 64px;
+}
+
+/* ── Dark mode via data-theme ── */
+:root {
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f8f8;
+  --color-text: #111111;
+  --color-text-muted: #555555;
+  --color-border: #e8e8e8;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0d0d0d;
+  --color-bg-alt: #161616;
+  --color-text: #f0f0f0;
+  --color-text-muted: #999999;
+  --color-border: #2a2a2a;
+}
+
+/* ── Base ── */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Smooth scroll for nav links ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Reading typography (excerpt page) ── */
+.prose-excerpt p {
+  margin-bottom: 1.5em;
+  text-indent: 2em;
+}
+.prose-excerpt p:first-of-type {
+  text-indent: 0;
+}
+
+/* ── Scroll reveal animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
