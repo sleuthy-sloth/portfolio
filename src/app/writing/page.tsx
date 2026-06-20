@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 /**
  * Writing page (/writing) — Memoria Aeterna book showcase.
@@ -31,74 +32,103 @@ export default function WritingPage() {
         >
           <div className="mx-auto max-w-[1100px] grid grid-cols-1 md:grid-cols-[320px_1fr] gap-16 items-start">
             {/* Book cover */}
-            <div className="md:max-w-[320px] mx-auto w-full">
-              <img
-                src="/assets/memoria-aeterna-cover.png"
-                alt="Memoria Aeterna book cover"
-                className="w-full rounded shadow-2xl"
-              />
-            </div>
+            <ScrollReveal delay={0.1}>
+              <div className="md:max-w-[320px] mx-auto w-full">
+                <img
+                  src="/assets/memoria-aeterna-cover.png"
+                  alt="Memoria Aeterna book cover"
+                  className="w-full rounded shadow-2xl"
+                />
+              </div>
+            </ScrollReveal>
 
             {/* Synopsis */}
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-gold)] mb-5">
-                A Novel by Steven K
-              </p>
-              <h1 className="font-[var(--font-serif)] text-[clamp(40px,6vw,56px)] font-semibold leading-none tracking-[-1px] mb-4">
-                Memoria
-                <br />
-                Aeterna
-              </h1>
-              <p className="font-[var(--font-serif)] italic text-sm text-white/60 mb-6">
-                Aionia he mneme. Eternal memory.
-                <br />
-                <span className="text-xs opacity-70">Byzantine funeral rite</span>
-              </p>
-              <div className="w-12 h-1 bg-[var(--color-gold)] mb-6" />
+              <ScrollReveal>
+                <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-gold)] mb-5">
+                  A Novel by Steven K
+                </p>
+              </ScrollReveal>
 
-              <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/85 mb-5">
-                Konstantin has been searching for 391 years.
-              </p>
-              <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/85 mb-5">
-                He is a Memorious, one of a small number of people who cannot
-                die in the ordinary way. When their bodies fail, they wake in a
-                new one, carrying every memory of every life they have lived.
-                For Konstantin, that means nearly a thousand years of memory,
-                beginning in Constantinople in 1043, where he served in the
-                Great Palace and fell in love with a woman named Theodora.
-              </p>
-              <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/85 mb-5">
-                Then Theodora died. And was born again. And died again. Each
-                time in a new body, a new name, a new life, with no memory of
-                who she had been. Konstantin, unable to forget, began to
-                search. He tracked her essence across centuries and continents,
-                through the Crusades, the Black Death, the fall of
-                Constantinople, the courts of Venice, the trenches of the
-                Western Front. Each time he found her, he was a stranger. Each
-                time he lost her, the search began again.
-              </p>
-              <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/85 mb-5">
-                In modern Istanbul, Konstantin finds Ayse Demir, an elderly
-                woman in a hospice bed, surrounded by her family. He knows it
-                is Theodora. He has forty years with her this time, and for the
-                first time in centuries, he considers the possibility that
-                finding her was never the point.
-              </p>
-              <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/70 italic mb-8">
-                Memoria Aeterna is a novel about memory, love, and what it
-                costs to hold on. It spans 982 years, from the golden domes of
-                Byzantium to the streets of modern Istanbul, asking one
-                question: if you could track the person you love across every
-                lifetime, would you? And what would you have to give up to
-                stop?
-              </p>
+              <ScrollReveal delay={0.1}>
+                <h1 className="font-[var(--font-serif)] text-[clamp(40px,6vw,56px)] font-semibold leading-none tracking-[-1px] mb-4">
+                  Memoria
+                  <br />
+                  Aeterna
+                </h1>
+              </ScrollReveal>
 
-              <a
-                href="/writing/excerpt"
-                className="inline-block bg-[var(--color-gold)] text-white px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:bg-[var(--color-gold-light)] transition-colors"
-              >
-                Read the First Chapter
-              </a>
+              <ScrollReveal delay={0.15}>
+                <p className="font-[var(--font-serif)] italic text-sm text-white/60 mb-6">
+                  Aionia he mneme. Eternal memory.
+                  <br />
+                  <span className="text-xs opacity-70">Byzantine funeral rite</span>
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.2}>
+                <div className="w-12 h-1 bg-[var(--color-gold)] mb-6" />
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.25}>
+                <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/85 mb-5">
+                  Konstantin has been searching for 391 years.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.3}>
+                <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/85 mb-5">
+                  He is a Memorious, one of a small number of people who cannot
+                  die in the ordinary way. When their bodies fail, they wake in a
+                  new one, carrying every memory of every life they have lived.
+                  For Konstantin, that means nearly a thousand years of memory,
+                  beginning in Constantinople in 1043, where he served in the
+                  Great Palace and fell in love with a woman named Theodora.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.35}>
+                <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/85 mb-5">
+                  Then Theodora died. And was born again. And died again. Each
+                  time in a new body, a new name, a new life, with no memory of
+                  who she had been. Konstantin, unable to forget, began to
+                  search. He tracked her essence across centuries and continents,
+                  through the Crusades, the Black Death, the fall of
+                  Constantinople, the courts of Venice, the trenches of the
+                  Western Front. Each time he found her, he was a stranger. Each
+                  time he lost her, the search began again.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.4}>
+                <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/85 mb-5">
+                  In modern Istanbul, Konstantin finds Ayse Demir, an elderly
+                  woman in a hospice bed, surrounded by her family. He knows it
+                  is Theodora. He has forty years with her this time, and for the
+                  first time in centuries, he considers the possibility that
+                  finding her was never the point.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.45}>
+                <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-white/70 italic mb-8">
+                  Memoria Aeterna is a novel about memory, love, and what it
+                  costs to hold on. It spans 982 years, from the golden domes of
+                  Byzantium to the streets of modern Istanbul, asking one
+                  question: if you could track the person you love across every
+                  lifetime, would you? And what would you have to give up to
+                  stop?
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.5}>
+                <a
+                  href="/writing/excerpt"
+                  className="inline-block bg-[var(--color-gold)] text-white px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:bg-[var(--color-gold-light)] transition-colors"
+                >
+                  Read the First Chapter
+                </a>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -106,29 +136,37 @@ export default function WritingPage() {
         {/* ── About the Author ── */}
         <section id="author" className="bg-[var(--color-bg)]">
           <div className="mx-auto max-w-[1100px] px-6 py-24">
-            <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-gold)] mb-5">
-              About the Author
-            </p>
-            <h2 className="text-[clamp(28px,4vw,40px)] font-black tracking-[-1px] mb-12">
-              Steven K
-            </h2>
+            <ScrollReveal>
+              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-gold)] mb-5">
+                About the Author
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-[clamp(28px,4vw,40px)] font-black tracking-[-1px] mb-12">
+                Steven K
+              </h2>
+            </ScrollReveal>
             <div className="max-w-[680px]">
-              <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-[var(--color-text-muted)] mb-5">
-                Steven K is a writer and United States Air Force veteran. He
-                served eighteen years as an avionics technician before
-                beginning a transition to civilian life through the DoD
-                SkillBridge program. He holds a Master of Science in
-                Aeronautical Engineering from Embry-Riddle Aeronautical
-                University.
-              </p>
-              <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-[var(--color-text-muted)]">
-                Memoria Aeterna is his first novel. It began as a question
-                about memory: what would it cost a person to carry every moment
-                of a thousand-year life, and could love survive that weight?
-                The novel draws on his years of study in Byzantine and Ottoman
-                history, and on time spent walking the streets of Istanbul,
-                where the layers of empires are still visible in the stones.
-              </p>
+              <ScrollReveal delay={0.15}>
+                <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-[var(--color-text-muted)] mb-5">
+                  Steven K is a writer and United States Air Force veteran. He
+                  served eighteen years as an avionics technician before
+                  beginning a transition to civilian life through the DoD
+                  SkillBridge program. He holds a Master of Science in
+                  Aeronautical Engineering from Embry-Riddle Aeronautical
+                  University.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p className="font-[var(--font-serif)] text-[17px] leading-relaxed text-[var(--color-text-muted)]">
+                  Memoria Aeterna is his first novel. It began as a question
+                  about memory: what would it cost a person to carry every moment
+                  of a thousand-year life, and could love survive that weight?
+                  The novel draws on his years of study in Byzantine and Ottoman
+                  history, and on time spent walking the streets of Istanbul,
+                  where the layers of empires are still visible in the stones.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -139,24 +177,32 @@ export default function WritingPage() {
           className="bg-[var(--color-midnight)] text-[#f0f0f0]"
         >
           <div className="mx-auto max-w-[1100px] px-6 py-24 text-center">
-            <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-gold)] mb-5">
-              For Literary Agents &amp; Publishers
-            </p>
-            <h2 className="text-[clamp(28px,4vw,40px)] font-black tracking-[-1px] mb-8">
-              Inquiries
-            </h2>
-            <p className="text-base text-white/70 max-w-[480px] mx-auto mb-10 leading-relaxed">
-              Memoria Aeterna is a complete 720-page manuscript, available upon
-              request.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href="mailto:steven.koehl@proton.me"
-                className="inline-block bg-[var(--color-gold)] text-white px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:bg-[var(--color-gold-light)] transition-colors"
-              >
-                Email Steven
-              </a>
-            </div>
+            <ScrollReveal>
+              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-gold)] mb-5">
+                For Literary Agents &amp; Publishers
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-[clamp(28px,4vw,40px)] font-black tracking-[-1px] mb-8">
+                Inquiries
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="text-base text-white/70 max-w-[480px] mx-auto mb-10 leading-relaxed">
+                Memoria Aeterna is a complete 720-page manuscript, available upon
+                request.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a
+                  href="mailto:steven.koehl@proton.me"
+                  className="inline-block bg-[var(--color-gold)] text-white px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:bg-[var(--color-gold-light)] transition-colors"
+                >
+                  Email Steven
+                </a>
+              </div>
+            </ScrollReveal>
           </div>
 
           <p className="text-center text-xs text-[#555] py-5 px-6 border-t border-[#222]">
