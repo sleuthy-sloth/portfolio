@@ -1,8 +1,36 @@
 # Portfolio Rebuild — Session Status & Next Steps
 
-**Date:** June 19, 2026  
+**Date:** June 20, 2026  
 **Repo:** [sleuthy-sloth/portfolio](https://github.com/sleuthy-sloth/portfolio)  
-**Live:** https://sleuthy-sloth.github.io/portfolio/
+**Live (Vercel):** https://portfolio-two-ochre-vxl9gmenfz.vercel.app  
+**Previous (GitHub Pages):** https://sleuthy-sloth.github.io/portfolio/
+
+---
+
+## ✅ Completed: Phase 2 — Next.js Migration
+
+- Next.js 16 (App Router, TypeScript, Tailwind v4, Turbopack)
+- 5 routes: `/`, `/work`, `/writing`, `/writing/excerpt`, `/_not-found`
+- Shared layout: Nav, Footer, ThemeToggle, RootClient (dark mode)
+- Landing page: hero + fork cards (Engineering / Writing)
+- `/work`: Hero, About, Projects, Skills, Contact
+- `/writing`: Book hero + synopsis, Author bio, Agent/publisher contact
+- `/writing/excerpt`: Chapter 1 "Letting the Palace Fall" with reading typography
+- Two-identity design: Engineering (red #e63946) + Writing (gold #c9a227)
+- Dark mode via data-theme + localStorage, inline script prevents flash
+- Deployed to Vercel with auto-deploy on push
+- All static prerender, TypeScript clean
+- Phase 1 static HTML preserved in `_phase1/` for reference
+- GitHub Pages workflow removed (replaced by Vercel)
+
+---
+
+## ✅ Completed: Phase 4 — Vercel Deployment
+
+1. ✅ Vercel project connected to portfolio repo
+2. ✅ Clean build confirmed on Vercel (all routes, TypeScript pass)
+3. ✅ Auto-deploy from master branch configured
+4. Domain: Steven can attach a custom domain later via Vercel dashboard
 
 ---
 
@@ -55,40 +83,6 @@
 
 ---
 
-## Remaining: Phase 2 — Next.js Migration
-
-### What This Phase Does
-Rebuild the site in **Next.js (App Router)** with **TypeScript** and **Tailwind CSS**, matching the NeuralPulse stack. Keep the same information architecture from Phase 1 (landing fork, /work, /writing, /writing/excerpt).
-
-### Key Instructions
-1. **Use file-based routing:** App Router with `app/` directory
-   - `app/page.tsx` → landing page (fork)
-   - `app/work/page.tsx` → engineering portfolio
-   - `app/writing/page.tsx` → Memoria Aeterna
-   - `app/writing/excerpt/page.tsx` → Chapter 1
-2. **Use `next/image`** for all images (headshot, screenshots, book cover)
-3. **Organized structure:** `components/`, `app/`, `lib/` directories
-4. **Files under 150 lines** where practical — split into components
-5. **Migrate content faithfully first** (structure from Phase 1), THEN layer in Phase 3 upgrades
-6. **Synchronous code** unless async is strictly necessary
-7. **Comment generously** — assume Steven is reading every file
-
-### Migration Order
-1. Initialize Next.js project in the portfolio repo (replace static HTML)
-2. Build shared layout (nav, footer, theme toggle)
-3. Build landing page with fork cards
-4. Build /work route with all sections
-5. Build /writing route with book content
-6. Build /writing/excerpt route with reading typography
-7. Get a working baseline, deploy to Vercel, show Steven
-
-### Notes
-- Current `next.config.ts` in NeuralPulse is a good reference for Next.js 16 config
-- The existing static HTML files and assets should be kept as reference during migration
-- GitHub Pages deployment workflow can be removed once Vercel is set up
-
----
-
 ## Remaining: Phase 3 — Visual & Interactive Upgrades
 
 Apply AFTER the Next.js migration baseline works. Roughly in priority order:
@@ -110,29 +104,13 @@ Apply AFTER the Next.js migration baseline works. Roughly in priority order:
 
 ---
 
-## Remaining: Phase 4 — Vercel Deployment
-
-1. Create Vercel project connected to portfolio repo
-2. Point `neuralpulse.app` (or new custom domain) at NeuralPulse Vercel deployment
-3. Confirm clean build: correct Next.js config, env vars, GitHub API token if needed
-4. Walk through attaching custom portfolio domain (Steven will purchase later)
-5. Set up automatic deployments from main branch
-6. Fix NeuralPulse Vercel deployment (currently only CI builds, no deploy)
-
-### Known State
-- ✅ Steven has a Vercel account linked to GitHub
-- ✅ NeuralPulse uses default `*.vercel.app` domain (no custom domain for now)
-- ✅ Portfolio custom domain: will purchase later
-- ✅ Proton email for literary agent contact: `steven.koehl@proton.me`
-
----
-
 ## Key Files & Paths
 
 | File | Location | Notes |
 |------|----------|-------|
-| Portfolio repo | `/tmp/portfolio/` | Local clone, pushed to GitHub |
-| Portfolio live | https://sleuthy-sloth.github.io/portfolio/ | GitHub Pages |
+| Portfolio repo | `/tmp/portfolio/` | Next.js 16, deployed to Vercel |
+| Portfolio live | https://portfolio-two-ochre-vxl9gmenfz.vercel.app | Vercel production |
+| Portfolio Vercel | https://vercel.com/sleuthy-sloths-projects/portfolio | Auto-deploy from master |
 | NeuralPulse repo | `sleuthy-sloth/NeuralPulse` | Next.js 16, 13 games |
 | 92-AMXS repo | `sleuthy-sloth/92-AMXS-Tracker` | React 19, Firebase |
 | Profile README | `sleuthy-sloth/sleuthy-sloth` | GitHub profile showcase |
@@ -163,12 +141,10 @@ Apply AFTER the Next.js migration baseline works. Roughly in priority order:
 
 ## For the Next Session
 
-When you resume, tell OpenCode:
+When you resume, say:
 
-> "Continue the portfolio rebuild from Phase 2. The status document is at
-> `/tmp/portfolio/PHASE-STATUS.md` in the repo. Start with the Next.js
-> migration — initialize the project in the portfolio repo, migrate the
-> Phase 1 information architecture to App Router, and stop for review
-> once the baseline is working."
+> "Continue Phase 3 of the portfolio rebuild. The Next.js baseline is live
+> at https://portfolio-two-ochre-vxl9gmenfz.vercel.app. Start with the first
+> visual upgrade from the plan — scroll-triggered reveals with Framer Motion."
 
-Or just say: "Continue Phase 2 of the portfolio rebuild."
+Or just say: "Continue Phase 3 of the portfolio rebuild."
