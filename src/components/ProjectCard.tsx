@@ -1,18 +1,24 @@
 import Link from "next/link";
 
 /**
- * ProjectCard — Used on the /work page for both software projects and
- * military achievements. Supports optional screenshot image.
+ * ProjectCard — Used on the /work page for both featured software projects
+ * and military achievements. Supports bento-grid layout via `variant`.
+ *
+ * - "featured": Large tile with screenshot, spans 2 columns in bento grid
+ * - "standard": Compact tile, no screenshot, spans 1 column
  */
+
 interface ProjectCardProps {
   title: string;
   category: string;
   description: string;
   tags: string[];
-  /** Optional screenshot — if provided, shows as a 16:10 image above the card */
+  /** Optional screenshot — shown on featured cards as a 16:10 image */
   screenshot?: { src: string; alt: string };
   /** Optional links (demo, source code, etc.) */
   links?: { href: string; label: string; external?: boolean }[];
+  /** Bento grid variant: "featured" (large) or "standard" (compact) */
+  variant?: "featured" | "standard";
 }
 
 export default function ProjectCard({
@@ -22,16 +28,25 @@ export default function ProjectCard({
   tags,
   screenshot,
   links,
+  variant = "standard",
 }: ProjectCardProps) {
+  const isFeatured = variant === "featured";
+
   return (
-    <article className="border border-[var(--color-border)] border-t-[3px] border-t-[var(--color-accent)] p-7 transition-shadow hover:shadow-md">
-      {/* Screenshot */}
-      {screenshot && (
+    <article
+      className={`border border-[var(--color-border)] border-t-[3px] p-7 transition-shadow hover:shadow-md flex flex-col ${
+        isFeatured
+          ? "border-t-[var(--color-accent)] md:col-span-2"
+          : "border-t-[var(--color-text)] col-span-1"
+      }`}
+    >
+      {/* Screenshot — featured cards only */}
+      {isFeatured && screenshot && (
         <div className="mx-[-28px] mt-[-28px] mb-5 overflow-hidden border-b border-[var(--color-border)] aspect-[16/10]">
           <img
             src={screenshot.src}
             alt={screenshot.alt}
-            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+            className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-[1.02]"
             loading="lazy"
           />
         </div>
@@ -40,8 +55,18 @@ export default function ProjectCard({
       <p className="text-[10px] font-bold uppercase tracking-[2px] text-[var(--color-accent)] mb-[10px]">
         {category}
       </p>
-      <h3 className="text-lg font-bold mb-3 leading-tight">{title}</h3>
-      <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-5">
+      <h3
+        className={`font-bold mb-3 leading-tight ${
+          isFeatured ? "text-xl" : "text-lg"
+        }`}
+      >
+        {title}
+      </h3>
+      <p
+        className={`text-[var(--color-text-muted)] leading-relaxed mb-5 flex-1 ${
+          isFeatured ? "text-[15px]" : "text-sm"
+        }`}
+      >
         {description}
       </p>
 
@@ -59,7 +84,7 @@ export default function ProjectCard({
 
       {/* Links */}
       {links && links.length > 0 && (
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 mt-auto">
           {links.map((link) =>
             link.external ? (
               <a

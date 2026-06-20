@@ -292,38 +292,59 @@ export default function WorkPage() {
           </div>
         </section>
 
-        {/* ── Projects ── */}
+        {/* ── Projects: Bento Grid ── */}
         <section id="projects">
           <div className="mx-auto max-w-[1100px] px-6 py-24">
             <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
               Selected Work
             </p>
-            <h2 className="text-[clamp(28px,4vw,40px)] font-black tracking-[-1px] mb-8">
+            <h2 className="text-[clamp(28px,4vw,40px)] font-black tracking-[-1px] mb-12">
               Projects
             </h2>
 
-            {/* Software */}
-            <p className="text-[13px] font-bold uppercase tracking-[2px] text-[var(--color-text-muted)] mb-6 pb-[10px] border-b border-[var(--color-border)]">
-              Software Projects
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
-              {SOFTWARE_PROJECTS.map((project, i) => (
-                <ScrollReveal key={project.title} delay={i * 0.1}>
-                  <ProjectCard {...project} />
-                </ScrollReveal>
-              ))}
-            </div>
+            {/* Bento grid: 3 columns on desktop, 1 on mobile.
+                Featured software projects span 2 columns.
+                Military achievements fill the right column. */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* NeuralPulse — featured, spans 2 cols + 2 rows */}
+              <ScrollReveal>
+                <div className="md:col-span-2 md:row-span-2">
+                  <ProjectCard
+                    {...SOFTWARE_PROJECTS[0]}
+                    variant="featured"
+                  />
+                </div>
+              </ScrollReveal>
 
-            {/* Military */}
-            <p className="text-[13px] font-bold uppercase tracking-[2px] text-[var(--color-text-muted)] mt-14 mb-6 pb-[10px] border-b border-[var(--color-border)]">
-              Military Achievements
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {MILITARY_ACHIEVEMENTS.map((project, i) => (
-                <ScrollReveal key={project.title} delay={i * 0.1}>
-                  <ProjectCard {...project} />
-                </ScrollReveal>
-              ))}
+              {/* Military 1 — right column */}
+              <ScrollReveal delay={0.1}>
+                <ProjectCard {...MILITARY_ACHIEVEMENTS[0]} />
+              </ScrollReveal>
+
+              {/* Military 2 — right column */}
+              <ScrollReveal delay={0.15}>
+                <ProjectCard {...MILITARY_ACHIEVEMENTS[1]} />
+              </ScrollReveal>
+
+              {/* 92-AMXS — featured, spans 2 cols */}
+              <ScrollReveal delay={0.1}>
+                <div className="md:col-span-2">
+                  <ProjectCard
+                    {...SOFTWARE_PROJECTS[1]}
+                    variant="featured"
+                  />
+                </div>
+              </ScrollReveal>
+
+              {/* Military 3 — right column */}
+              <ScrollReveal delay={0.2}>
+                <ProjectCard {...MILITARY_ACHIEVEMENTS[2]} />
+              </ScrollReveal>
+
+              {/* Military 4 — right column, spans remaining space */}
+              <ScrollReveal delay={0.25}>
+                <ProjectCard {...MILITARY_ACHIEVEMENTS[3]} />
+              </ScrollReveal>
             </div>
           </div>
         </section>
