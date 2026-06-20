@@ -24,6 +24,11 @@ const SOFTWARE_PROJECTS = [
     },
     links: [
       {
+        href: "/work/neuralpulse",
+        label: "Case Study",
+        external: false,
+      },
+      {
         href: "https://github.com/sleuthy-sloth/NeuralPulse",
         label: "Source Code",
         external: true,
@@ -41,6 +46,11 @@ const SOFTWARE_PROJECTS = [
       alt: "92 AMXS Tracker dashboard screenshot",
     },
     links: [
+      {
+        href: "/work/92-amxs-tracker",
+        label: "Case Study",
+        external: false,
+      },
       {
         href: "https://sleuthy-sloth.github.io/92-AMXS-Tracker/",
         label: "Live Demo",
