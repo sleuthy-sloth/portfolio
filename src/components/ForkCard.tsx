@@ -28,7 +28,7 @@ export default function ForkCard({
       href={href}
       className={`group block rounded-lg border p-12 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${
         isWriting
-          ? "border-t-4 border-t-[var(--color-gold)] bg-[var(--color-midnight)] text-[#f0f0f0] border-[var(--color-border)]"
+          ? "border-t-4 border-t-[var(--color-gold)] bg-[var(--color-midnight)] text-white/90 border-[var(--color-border)]"
           : "border-t-4 border-t-[var(--color-accent)] bg-[var(--color-bg)] border-[var(--color-border)]"
       }`}
     >

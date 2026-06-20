@@ -25,7 +25,7 @@ export default function Nav({ links }: { links?: NavLink[] }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-16 border-b border-[var(--color-border)] bg-white/97 dark:bg-[#0d0d0d]/97 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-16 border-b border-[var(--color-border)] bg-[var(--color-bg)]/97 backdrop-blur-sm">
       <div className="mx-auto flex h-full max-w-[1100px] items-center justify-between px-6">
         {/* Name — returns to landing */}
         <Link

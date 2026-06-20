@@ -28,7 +28,7 @@ export default function WritingPage() {
         {/* ── Book Hero ── */}
         <section
           id="book-hero"
-          className="bg-[var(--color-midnight)] text-[#f0f0f0] pt-[calc(var(--nav-height)+48px)] pb-24 px-6"
+          className="bg-[var(--color-midnight)] text-white/90 pt-[calc(var(--nav-height)+48px)] pb-24 px-6"
         >
           <div className="mx-auto max-w-[1100px] grid grid-cols-1 md:grid-cols-[320px_1fr] gap-16 items-start">
             {/* Book cover */}
@@ -174,7 +174,7 @@ export default function WritingPage() {
         {/* ── Agent / Publisher Contact ── */}
         <section
           id="agent-contact"
-          className="bg-[var(--color-midnight)] text-[#f0f0f0]"
+          className="bg-[var(--color-midnight)] text-white/90"
         >
           <div className="mx-auto max-w-[1100px] px-6 py-24 text-center">
             <ScrollReveal>
@@ -205,7 +205,7 @@ export default function WritingPage() {
             </ScrollReveal>
           </div>
 
-          <p className="text-center text-xs text-[#555] py-5 px-6 border-t border-[#222]">
+          <p className="text-center text-xs text-[var(--color-text-muted)] py-5 px-6 border-t border-[var(--color-dark-border)]">
             &copy; {new Date().getFullYear()} Steven K. All rights reserved.
           </p>
         </section>
