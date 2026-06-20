@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 
 /**
  * ForkCard — Large card on the landing page that forks users between the
  * Engineering (/work) and Writing (/writing) sections of the site.
+ *
+ * Hover: accent-colored glow, tags lift, arrow slides right.
  */
+
 interface ForkCardProps {
   href: string;
   identity: "engineering" | "writing";
@@ -26,11 +31,24 @@ export default function ForkCard({
   return (
     <Link
       href={href}
-      className={`group block rounded-lg border p-12 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${
+      className={`group block rounded-lg border p-12 transition-all duration-300 hover:-translate-y-1.5 ${
         isWriting
           ? "border-t-4 border-t-[var(--color-gold)] bg-[var(--color-midnight)] text-white/90 border-[var(--color-border)]"
           : "border-t-4 border-t-[var(--color-accent)] bg-[var(--color-bg)] border-[var(--color-border)]"
       }`}
+      style={{
+        boxShadow: "0 0 0 0 transparent",
+        // Inline style for dynamic accent — Tailwind can't do calc with CSS vars
+      }}
+      onMouseEnter={(e) => {
+        const color = isWriting
+          ? "rgba(201,162,39,0.15)"
+          : "rgba(230,57,70,0.12)";
+        e.currentTarget.style.boxShadow = `0 8px 32px ${color}`;
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = "0 0 0 0 transparent";
+      }}
     >
       <p
         className={`text-[11px] font-bold uppercase tracking-[3px] mb-4 ${
@@ -39,7 +57,7 @@ export default function ForkCard({
       >
         {label}
       </p>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-black leading-[1.1] mb-5">
+      <h2 className="text-[clamp(28px,4vw,40px)] font-black leading-[1.1] mb-5 transition-colors duration-300 group-hover:text-[var(--color-gold)]">
         {title.split("\n").map((line, i) => (
           <span key={i}>
             {i > 0 && <br />}
@@ -54,10 +72,10 @@ export default function ForkCard({
         {tags.map((tag) => (
           <span
             key={tag}
-            className={`border px-[10px] py-[3px] text-[11px] rounded-sm ${
+            className={`border px-[10px] py-[3px] text-[11px] rounded-sm transition-all duration-300 group-hover:-translate-y-[1px] ${
               isWriting
-                ? "bg-white/10 border-white/15 text-white/70"
-                : "bg-[var(--color-bg-alt)] border-[var(--color-border)] text-[var(--color-text-muted)]"
+                ? "bg-white/10 border-white/15 text-white/70 group-hover:border-[var(--color-gold)]/30"
+                : "bg-[var(--color-bg-alt)] border-[var(--color-border)] text-[var(--color-text-muted)] group-hover:border-[var(--color-accent)]/20"
             }`}
           >
             {tag}
@@ -65,11 +83,14 @@ export default function ForkCard({
         ))}
       </div>
       <span
-        className={`text-sm font-bold ${
+        className={`inline-flex items-center gap-1 text-sm font-bold transition-all duration-300 group-hover:gap-2 ${
           isWriting ? "text-[var(--color-gold)]" : "text-[var(--color-accent)]"
         }`}
       >
-        Enter &rarr;
+        Enter
+        <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+          &rarr;
+        </span>
       </span>
     </Link>
   );
