@@ -20,6 +20,8 @@ interface Event {
   created_at: string;
   payload: {
     commits?: { message: string }[];
+    size?: number;
+    distinct_size?: number;
     ref?: string;
     action?: string;
     ref_type?: string;
@@ -45,7 +47,12 @@ function formatEvent(event: Event): string {
 
   switch (event.type) {
     case "PushEvent": {
-      const count = event.payload.commits?.length ?? 0;
+      // Public API omits full commit details — use size/distinct_size
+      const count =
+        event.payload.commits?.length ||
+        event.payload.distinct_size ||
+        event.payload.size ||
+        0;
       const branch = event.payload.ref?.replace("refs/heads/", "") ?? "main";
       const commitWord = count === 1 ? "commit" : "commits";
       return `Pushed ${count} ${commitWord} to ${repo} (${branch})`;
