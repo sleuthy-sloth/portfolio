@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 /**
  * Engineering portfolio (/work) — Steven's software development and
@@ -254,29 +255,28 @@ export default function WorkPage() {
                 {/* Stats */}
                 <div className="flex flex-wrap gap-10">
                   <div className="flex flex-col gap-1">
-                    <span className="text-[28px] font-black leading-none">
-                      18+
-                    </span>
-                    <span className="text-[10px] font-bold uppercase tracking-[1.5px] text-[var(--color-text-muted)]">
-                      Years Service
-                    </span>
+                    <AnimatedCounter
+                      target={18}
+                      suffix="+"
+                      label="Years Service"
+                    />
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <ScrollReveal>
                     <span className="text-[28px] font-black leading-none">
                       M.S.
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-[1.5px] text-[var(--color-text-muted)]">
+                    <span className="text-[10px] font-bold uppercase tracking-[1.5px] text-[var(--color-text-muted)] mt-1 block">
                       Aero Engineering
                     </span>
-                  </div>
-                  <div className="flex flex-col gap-1">
+                  </ScrollReveal>
+                  <ScrollReveal delay={0.1}>
                     <span className="text-[28px] font-black leading-none">
                       ERAU
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-[1.5px] text-[var(--color-text-muted)]">
+                    <span className="text-[10px] font-bold uppercase tracking-[1.5px] text-[var(--color-text-muted)] mt-1 block">
                       Embry-Riddle
                     </span>
-                  </div>
+                  </ScrollReveal>
                 </div>
 
                 {/* GitHub stats */}
