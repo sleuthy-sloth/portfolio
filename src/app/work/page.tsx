@@ -5,6 +5,8 @@ import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import GitHubActivity from "@/components/GitHubActivity";
 
+const GITHUB_USER = "sleuthy-sloth";
+
 /**
  * Engineering portfolio (/work) — Steven's software development and
  * USAF career, organized into sections: Hero, About, Projects, Skills, Contact.
@@ -290,16 +292,18 @@ export default function WorkPage() {
                   </ScrollReveal>
                 </div>
 
-                {/* GitHub: stats + live activity */}
+                {/* GitHub: contribution heatmap + live activity */}
                 <ScrollReveal delay={0.2}>
-                  <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Static stats card */}
-                    <img
-                      src="https://github-readme-stats.vercel.app/api?username=sleuthy-sloth&show_icons=true&count_private=true&hide_title=true&bg_color=00000000&title_color=e63946&icon_color=e63946&text_color=555555&border_color=e8e8e8"
-                      alt="GitHub stats"
-                      loading="lazy"
-                      className="w-full"
-                    />
+                  <div className="mt-8 space-y-6">
+                    {/* Contribution heatmap (ghchart.rshah.org) */}
+                    <div className="border border-[var(--color-border)] rounded-sm overflow-hidden">
+                      <img
+                        src={`https://ghchart.rshah.org/${GITHUB_USER}`}
+                        alt="GitHub contribution graph"
+                        loading="lazy"
+                        className="w-full"
+                      />
+                    </div>
                     {/* Live activity feed (client component, cached) */}
                     <GitHubActivity />
                   </div>
