@@ -1,9 +1,9 @@
-// Smooth scroll for nav links (CSS scroll-behavior handles most cases,
-// this ensures offset for fixed nav)
+// Smooth scroll for nav links with fixed nav offset
 const NAV_HEIGHT = parseInt(
   getComputedStyle(document.documentElement).getPropertyValue('--nav-height')
 );
 
+// Smooth-scroll same-page links; let cross-page links navigate normally
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const target = document.querySelector(link.getAttribute('href'));
@@ -17,13 +17,10 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 // Mobile nav toggle
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinks = document.querySelector('.nav-links');
-
 hamburger?.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('open');
   hamburger.setAttribute('aria-expanded', String(isOpen));
 });
-
-// Close mobile nav when a link is clicked
 navLinks?.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
     navLinks.classList.remove('open');
@@ -31,21 +28,15 @@ navLinks?.querySelectorAll('a').forEach(a => {
   });
 });
 
-// Show real photo when it loads; show placeholder if it fails
-// Handles the cached-image race: if the image is already complete,
-// the 'load' event fires before we can attach a listener.
+// Show real photo when it loads, handling cached-image race
 const profilePhoto = document.getElementById('profile-photo');
 if (profilePhoto) {
   const aboutPhoto = profilePhoto.closest('.about-photo');
   if (profilePhoto.complete && profilePhoto.naturalWidth > 0) {
     aboutPhoto.classList.add('has-photo');
   } else {
-    profilePhoto.addEventListener('load', () => {
-      aboutPhoto.classList.add('has-photo');
-    });
-    profilePhoto.addEventListener('error', () => {
-      aboutPhoto.classList.remove('has-photo');
-    });
+    profilePhoto.addEventListener('load', () => aboutPhoto.classList.add('has-photo'));
+    profilePhoto.addEventListener('error', () => aboutPhoto.classList.remove('has-photo'));
   }
 }
 
@@ -53,9 +44,8 @@ if (profilePhoto) {
 const footerYear = document.getElementById('footer-year');
 if (footerYear) footerYear.textContent = new Date().getFullYear();
 
-// Scroll reveal — fade sections in as they enter viewport
+// Scroll reveal
 const revealEls = document.querySelectorAll('.project-card, .skill-group, .about-grid');
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -64,16 +54,11 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.1 });
+revealEls.forEach(el => { el.classList.add('reveal'); observer.observe(el); });
 
-revealEls.forEach(el => {
-  el.classList.add('reveal');
-  observer.observe(el);
-});
-
-// Highlight active nav link on scroll
+// Active nav link highlighting on scroll (work page only)
 const sections = document.querySelectorAll('section[id]');
 const navAs = document.querySelectorAll('.nav-links a');
-
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -83,17 +68,14 @@ const sectionObserver = new IntersectionObserver(entries => {
     }
   });
 }, { rootMargin: '-40% 0px -55% 0px' });
-
 sections.forEach(s => sectionObserver.observe(s));
 
-// Dark mode toggle — persists to localStorage
+// Dark mode toggle, persisted to localStorage
 const themeToggle = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme');
-
 if (savedTheme === 'dark') {
   document.documentElement.setAttribute('data-theme', 'dark');
 }
-
 themeToggle?.addEventListener('click', () => {
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   if (isDark) {
