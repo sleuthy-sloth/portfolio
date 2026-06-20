@@ -4,6 +4,7 @@ import ProjectCard from "@/components/ProjectCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import GitHubActivity from "@/components/GitHubActivity";
+import CommandPalette from "@/components/CommandPalette";
 
 const GITHUB_USER = "sleuthy-sloth";
 
@@ -180,6 +181,7 @@ export default function WorkPage() {
   return (
     <>
       <Nav links={navLinks} />
+      <CommandPalette />
 
       <main className="flex-1">
         {/* ── Hero ── */}
