@@ -24,7 +24,7 @@ export default function ProjectCard({
   links,
 }: ProjectCardProps) {
   return (
-    <article className="border border-[var(--color-border)] border-t-[3px] border-t-[var(--color-accent)] p-7 transition-shadow hover:shadow-md reveal">
+    <article className="border border-[var(--color-border)] border-t-[3px] border-t-[var(--color-accent)] p-7 transition-shadow hover:shadow-md">
       {/* Screenshot */}
       {screenshot && (
         <div className="mx-[-28px] mt-[-28px] mb-5 overflow-hidden border-b border-[var(--color-border)] aspect-[16/10]">
