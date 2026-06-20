@@ -83,24 +83,30 @@
 
 ---
 
-## Remaining: Phase 3 — Visual & Interactive Upgrades
+## ✅ Completed: Phase 3 — Visual & Interactive Upgrades
 
-Apply AFTER the Next.js migration baseline works. Roughly in priority order:
+All 9 items implemented:
 
-1. **Scroll-triggered reveals** — Framer Motion, sections fade/slide in
-2. **Animated stat counters** — count up when they enter viewport
-3. **Bento-grid layout for Projects** — NeuralPulse + 92-AMXS as large tiles
-4. **Dedicated case-study pages** — template first, then real content
-5. **Custom color identity & typography** — 2-3 palette directions to choose from
-6. **Dark/light mode toggle** — Tailwind dark mode (already a working prototype in Phase 1)
-7. **Live GitHub activity widget** — fetch from GitHub API, cache appropriately
-8. **Command palette (Cmd+K)** — for /work side specifically
-9. **Interactive project card hover states** — looping demo clips if feasible
+1. ✅ **Scroll-triggered reveals** — Framer Motion fade-up on every section
+2. ✅ **Animated stat counters** — "18+" counts up, M.S./ERAU fade in
+3. ✅ **Bento-grid layout for Projects** — 3-column asymmetric grid, NeuralPulse spans 2×2
+4. ✅ **Dedicated case-study pages** — /work/neuralpulse and /work/92-amxs-tracker
+5. ✅ **Custom color identity & design tokens** — zero hardcoded hex, all token-driven
+6. ✅ **Dark/light mode toggle** — already working from Phase 1, refined
+7. ✅ **Live GitHub activity widget** — contribution heatmap + event feed, localStorage cached
+8. ✅ **Command palette (Cmd+K)** — search pages, sections, external links
+9. ✅ **Interactive hover states** — accent glow, screenshot zoom, tag lift, arrow slide
 
-### Rules
-- Implement one at a time, show Steven, get thumbs up, move on
-- Flag anything that hurts performance or accessibility before building
-- Don't build all nine in one shot
+---
+
+## All Phases Complete
+
+The portfolio rebuild is finished. Next.js 16, TypeScript, Tailwind v4, 7 routes, auto-deployed to Vercel.
+
+Future work (optional):
+- Purchase and attach custom domain via Vercel dashboard
+- Record demo clips/screenshots for NeuralPulse and 92-AMXS
+- Add a blog or changelog section if needed
 
 ---
 
@@ -139,12 +145,7 @@ Apply AFTER the Next.js migration baseline works. Roughly in priority order:
 
 ---
 
-## For the Next Session
+## Status
 
-When you resume, say:
-
-> "Continue Phase 3 of the portfolio rebuild. The Next.js baseline is live
-> at https://portfolio-two-ochre-vxl9gmenfz.vercel.app. Start with the first
-> visual upgrade from the plan — scroll-triggered reveals with Framer Motion."
-
-Or just say: "Continue Phase 3 of the portfolio rebuild."
+✅ All phases complete. Portfolio is live on Vercel with auto-deploy from master.
+Next steps are optional: custom domain, demo clips, or additional content.
