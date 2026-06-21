@@ -78,6 +78,15 @@ const COMMANDS: Command[] = [
     kind: "page",
     category: "Navigate",
   },
+  {
+    id: "now",
+    label: "What I'm Doing Now",
+    description: "Current projects, learning, and focus",
+    icon: "📍",
+    href: "/now",
+    kind: "page",
+    category: "Navigate",
+  },
 
   // ── Sections (scroll to anchor on /work) ──
   {

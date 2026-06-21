@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import GitHubStars from "@/components/GitHubStars";
 
 /**
  * ProjectCard — Used on the /work page for both featured software projects
@@ -19,6 +20,7 @@ interface ProjectCardProps {
   screenshot?: { src: string; alt: string };
   links?: { href: string; label: string; external?: boolean }[];
   variant?: "featured" | "standard";
+  ghRepo?: string;
 }
 
 export default function ProjectCard({
@@ -29,6 +31,7 @@ export default function ProjectCard({
   screenshot,
   links,
   variant = "standard",
+  ghRepo,
 }: ProjectCardProps) {
   const isFeatured = variant === "featured";
 
@@ -65,6 +68,13 @@ export default function ProjectCard({
       >
         {title}
       </h3>
+
+      {/* GitHub stars — only for featured cards with a linked repo */}
+      {isFeatured && ghRepo && (
+        <div className="mb-3 -mt-1">
+          <GitHubStars repo={ghRepo} />
+        </div>
+      )}
 
       <p
         className={`text-[var(--color-text-muted)] leading-relaxed mb-5 flex-1 ${

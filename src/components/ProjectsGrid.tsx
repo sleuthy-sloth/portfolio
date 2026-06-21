@@ -90,7 +90,7 @@ export default function ProjectsGrid() {
           {/* NeuralPulse — featured, spans 2 cols + 2 rows */}
           <ScrollReveal>
             <div className="md:col-span-2 md:row-span-2">
-              <ProjectCard {...SOFTWARE_PROJECTS[0]} variant="featured" />
+              <ProjectCard {...SOFTWARE_PROJECTS[0]} variant="featured" ghRepo="NeuralPulse" />
             </div>
           </ScrollReveal>
 
@@ -107,7 +107,7 @@ export default function ProjectsGrid() {
           {/* 92-AMXS — featured, spans 2 cols */}
           <ScrollReveal delay={0.1}>
             <div className="md:col-span-2">
-              <ProjectCard {...SOFTWARE_PROJECTS[1]} variant="featured" />
+              <ProjectCard {...SOFTWARE_PROJECTS[1]} variant="featured" ghRepo="92-AMXS-Tracker" />
             </div>
           </ScrollReveal>
 

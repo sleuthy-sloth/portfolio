@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import GitHubActivity from "@/components/GitHubActivity";
@@ -6,6 +9,8 @@ import GitHubActivity from "@/components/GitHubActivity";
 const GITHUB_USER = "sleuthy-sloth";
 
 export default function AboutSection() {
+  const [chartFailed, setChartFailed] = useState(false);
+
   return (
     <section id="about" className="bg-[var(--color-bg-alt)]">
       <div className="mx-auto max-w-[1100px] px-6 py-24">
@@ -68,16 +73,34 @@ export default function AboutSection() {
             {/* GitHub: contribution heatmap + live activity */}
             <ScrollReveal delay={0.2}>
               <div className="mt-8 space-y-6">
-                <div className="border border-[var(--color-border)] rounded-sm overflow-hidden">
-                  <Image
-                    src={`https://ghchart.rshah.org/${GITHUB_USER}`}
-                    alt="GitHub contribution graph"
-                    width={800}
-                    height={128}
-                    className="w-full h-auto"
-                    unoptimized
-                  />
-                </div>
+                {!chartFailed ? (
+                  <div className="border border-[var(--color-border)] rounded-sm overflow-hidden">
+                    <Image
+                      src={`https://ghchart.rshah.org/${GITHUB_USER}`}
+                      alt="GitHub contribution graph"
+                      width={800}
+                      height={128}
+                      className="w-full h-auto"
+                      unoptimized
+                      onError={() => setChartFailed(true)}
+                    />
+                  </div>
+                ) : (
+                  <div className="border border-[var(--color-border)] rounded-sm p-8 text-center">
+                    <p className="text-sm text-[var(--color-text-muted)]">
+                      Contribution graph unavailable.{" "}
+                      <a
+                        href={`https://github.com/${GITHUB_USER}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[var(--color-accent)] hover:underline"
+                      >
+                        View GitHub profile
+                      </a>
+                      .
+                    </p>
+                  </div>
+                )}
                 <GitHubActivity />
               </div>
             </ScrollReveal>

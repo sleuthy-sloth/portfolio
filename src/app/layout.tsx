@@ -58,6 +58,10 @@ export default function RootLayout({
         />
         {/* Skip-to-content for keyboard users */}
         <style>{`#skip-link:focus { top: 8px; }`}</style>
+        {/* PWA manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
       </head>
       <body className="min-h-dvh flex flex-col bg-[var(--color-bg)] text-[var(--color-text)]">
         <a
