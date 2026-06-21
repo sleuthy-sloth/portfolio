@@ -60,6 +60,7 @@ export default function ScrollReveal({
       variants={variants}
       transition={{ delay }}
       className={className}
+      data-scroll-reveal
     >
       {children}
     </motion.div>

@@ -33,7 +33,7 @@ export default function ProjectCard({
 
   return (
     <article
-      className={`group border border-[var(--color-border)] border-t-[3px] p-7 flex flex-col transition-all duration-300 ${
+      className={`group border border-[var(--color-border)] border-t-[3px] p-7 flex flex-col transition-[transform,box-shadow,border-color] duration-300 ${
         isFeatured
           ? "border-t-[var(--color-accent)] md:col-span-2 hover:shadow-[0_0_24px_rgba(230,57,70,0.12)]"
           : "border-t-[var(--color-text)] col-span-1 hover:border-t-[var(--color-accent)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
@@ -41,7 +41,7 @@ export default function ProjectCard({
     >
       {/* Screenshot — featured only, zooms on card hover */}
       {isFeatured && screenshot && (
-        <div className="mx-[-28px] mt-[-28px] mb-5 overflow-hidden border-b border-[var(--color-border)] aspect-[16/10]">
+        <div className="mx-[-28px] max-md:mx-[-24px] mt-[-28px] mb-5 overflow-hidden border-b border-[var(--color-border)] aspect-[16/10]">
           <img
             src={screenshot.src}
             alt={screenshot.alt}
@@ -77,7 +77,7 @@ export default function ProjectCard({
         {tags.map((tag) => (
           <span
             key={tag}
-            className="border border-[var(--color-border)] bg-[var(--color-bg-alt)] px-[10px] py-[3px] text-[11px] text-[var(--color-text-muted)] rounded-sm transition-all duration-300 group-hover:border-[var(--color-accent)]/20 group-hover:-translate-y-[1px]"
+            className="border border-[var(--color-border)] bg-[var(--color-bg-alt)] px-[10px] py-[3px] text-[11px] text-[var(--color-text-muted)] rounded-sm transition-[transform,border-color] duration-300 group-hover:border-[var(--color-accent)]/20 group-hover:-translate-y-[1px]"
           >
             {tag}
           </span>

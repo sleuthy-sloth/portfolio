@@ -4,27 +4,23 @@
 
 This site collects my projects, skills, and professional background. 18 years fixing jets and leading airmen, now building open-source software through the DoD SkillBridge program.
 
----
-
 ## What's On It
 
 - **Software Projects** — NeuralPulse (brain training) and 92 AMXS Tracker (maintenance ops)
 - **Military Achievements** — PQDR program, $35M management, AI lead initiative, training curriculum
 - **Skills** — Software development stack + avionics + leadership
+- **Writing** — Memoria Aeterna novel (synopsis, excerpt, agent contact)
 - **Contact** — Email, LinkedIn, GitHub
-
----
 
 ## Tech Stack
 
-Pure HTML/CSS/JS — no framework, no build step, no dependencies. Deployed to GitHub Pages.
+Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion. Deployed to Vercel.
 
 ```bash
-# Just open index.html in a browser, or serve locally:
-python3 -m http.server 8000
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # Production build
 ```
-
----
 
 ## License
 

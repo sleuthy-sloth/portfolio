@@ -10,13 +10,13 @@ export default function Footer() {
       <div className="flex flex-wrap gap-6 justify-center mb-4">
         <a
           href="mailto:spkoehl@gmail.com"
-          className="text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+          className="inline-block text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-2 min-h-[44px] min-w-[44px]"
         >
           Gmail
         </a>
         <a
           href="mailto:steven.koehl@proton.me"
-          className="text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+          className="inline-block text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-2 min-h-[44px] min-w-[44px]"
         >
           Proton Mail
         </a>
@@ -24,7 +24,7 @@ export default function Footer() {
           href="https://www.linkedin.com/in/steven-koehl"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+          className="inline-block text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-2 min-h-[44px] min-w-[44px]"
         >
           LinkedIn
         </a>
@@ -32,7 +32,7 @@ export default function Footer() {
           href="https://github.com/sleuthy-sloth"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+          className="inline-block text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-2 min-h-[44px] min-w-[44px]"
         >
           GitHub
         </a>

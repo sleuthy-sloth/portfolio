@@ -183,7 +183,7 @@ export default function WorkPage() {
       <Nav links={navLinks} />
       <CommandPalette />
 
-      <main className="flex-1">
+      <main className="flex-1" id="main-content">
         {/* ── Hero ── */}
         <section
           id="hero"

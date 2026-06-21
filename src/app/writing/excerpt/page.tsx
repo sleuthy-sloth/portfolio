@@ -97,7 +97,7 @@ export default function ExcerptPage() {
     <>
       <Nav links={navLinks} />
 
-      <main className="flex-1">
+      <main className="flex-1" id="main-content">
         <article className="max-w-[680px] mx-auto px-6 pt-[calc(var(--nav-height)+64px)] pb-24">
           {/* Header */}
           <header className="text-center mb-12">

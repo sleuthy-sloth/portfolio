@@ -14,7 +14,7 @@ export default function HomePage() {
     <>
       <Nav />
 
-      <main className="flex-1">
+      <main className="flex-1" id="main-content">
         {/* Hero */}
         <section className="flex min-h-[70vh] items-center justify-center px-6 pt-[calc(var(--nav-height)+48px)] pb-12">
           <div className="max-w-[720px] text-center">

@@ -62,14 +62,26 @@ export default function Nav({ links }: { links?: NavLink[] }) {
           {/* Hamburger (mobile) */}
           {links && links.length > 0 && (
             <button
-              className="flex md:hidden flex-col gap-[5px] p-1"
+              className="flex md:hidden flex-col items-center justify-center gap-[5px] p-2 min-w-[44px] min-h-[44px]"
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
               aria-expanded={open}
             >
-              <span className="block w-[22px] h-[2px] bg-[var(--color-text)] transition-transform" />
-              <span className="block w-[22px] h-[2px] bg-[var(--color-text)] transition-transform" />
-              <span className="block w-[22px] h-[2px] bg-[var(--color-text)] transition-transform" />
+              <span
+                className={`block w-[22px] h-[2px] bg-[var(--color-text)] transition-transform duration-300 ${
+                  open ? "rotate-45 translate-y-[7px]" : ""
+                }`}
+              />
+              <span
+                className={`block w-[22px] h-[2px] bg-[var(--color-text)] transition-opacity duration-300 ${
+                  open ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block w-[22px] h-[2px] bg-[var(--color-text)] transition-transform duration-300 ${
+                  open ? "-rotate-45 -translate-y-[7px]" : ""
+                }`}
+              />
             </button>
           )}
 
@@ -79,7 +91,7 @@ export default function Nav({ links }: { links?: NavLink[] }) {
 
       {/* Mobile overlay */}
       {open && (
-        <div className="md:hidden fixed inset-0 top-16 bg-[var(--color-bg)] flex flex-col items-center justify-center gap-10 z-40">
+        <div className="md:hidden fixed inset-0 top-16 bg-[var(--color-bg)] flex flex-col items-center justify-center gap-10 z-40 pb-[max(env(safe-area-inset-bottom,0px),24px)]">
           {links?.map((link) => (
             <Link
               key={link.href}

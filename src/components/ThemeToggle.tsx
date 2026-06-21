@@ -22,7 +22,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="flex items-center justify-center w-9 h-9 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-accent)] hover:bg-[var(--color-bg-alt)] transition-colors"
+      className="flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-accent)] hover:bg-[var(--color-bg-alt)] transition-colors"
       aria-label="Toggle dark mode"
       title="Toggle dark mode"
     >
