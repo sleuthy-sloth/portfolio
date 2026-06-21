@@ -2,6 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import Image from "next/image";
 
 /**
  * NeuralPulse case study (/work/neuralpulse).
@@ -43,7 +44,7 @@ export default function NeuralPulsePage() {
     <>
       <Nav links={navLinks} />
 
-      <main className="flex-1">
+      <main className="flex-1" id="main-content">
         {/* ── Hero ── */}
         <section className="bg-[var(--color-bg-alt)] pt-[calc(var(--nav-height)+64px)] pb-16 px-6">
           <div className="mx-auto max-w-[900px]">
@@ -69,10 +70,13 @@ export default function NeuralPulsePage() {
             <ScrollReveal delay={0.2}>
               {/* Screenshot */}
               <div className="border border-[var(--color-border)] rounded overflow-hidden shadow-lg">
-                <img
+                <Image
                   src="/assets/neuralpulse-screenshot.png"
                   alt="NeuralPulse brain training app dashboard and game screens"
-                  className="w-full"
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto"
+                  sizes="(max-width: 900px) 100vw, 900px"
                 />
               </div>
             </ScrollReveal>

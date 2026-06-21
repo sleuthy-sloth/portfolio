@@ -2,6 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import Image from "next/image";
 
 /**
  * 92 AMXS Tracker case study (/work/92-amxs-tracker).
@@ -45,7 +46,7 @@ export default function AmxsTrackerPage() {
     <>
       <Nav links={navLinks} />
 
-      <main className="flex-1">
+      <main className="flex-1" id="main-content">
         {/* ── Hero ── */}
         <section className="bg-[var(--color-bg-alt)] pt-[calc(var(--nav-height)+64px)] pb-16 px-6">
           <div className="mx-auto max-w-[900px]">
@@ -72,10 +73,13 @@ export default function AmxsTrackerPage() {
             <ScrollReveal delay={0.2}>
               {/* Screenshot */}
               <div className="border border-[var(--color-border)] rounded overflow-hidden shadow-lg">
-                <img
+                <Image
                   src="/assets/92amxs-screenshot.png"
                   alt="92 AMXS Tracker maintenance dashboard"
-                  className="w-full"
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto"
+                  sizes="(max-width: 900px) 100vw, 900px"
                 />
               </div>
             </ScrollReveal>

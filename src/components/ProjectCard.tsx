@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /**
  * ProjectCard — Used on the /work page for both featured software projects
@@ -41,12 +42,13 @@ export default function ProjectCard({
     >
       {/* Screenshot — featured only, zooms on card hover */}
       {isFeatured && screenshot && (
-        <div className="mx-[-28px] max-md:mx-[-24px] mt-[-28px] mb-5 overflow-hidden border-b border-[var(--color-border)] aspect-[16/10]">
-          <img
+        <div className="mx-[-28px] max-md:mx-[-24px] mt-[-28px] mb-5 overflow-hidden border-b border-[var(--color-border)] relative aspect-[16/10]">
+          <Image
             src={screenshot.src}
             alt={screenshot.alt}
-            className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-            loading="lazy"
+            fill
+            className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+            sizes="(max-width: 768px) 100vw, 66vw"
           />
         </div>
       )}

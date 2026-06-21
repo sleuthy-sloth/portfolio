@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import Image from "next/image";
 
 /**
  * Writing page (/writing) — Memoria Aeterna book showcase.
@@ -34,10 +35,14 @@ export default function WritingPage() {
             {/* Book cover */}
             <ScrollReveal delay={0.1}>
               <div className="md:max-w-[320px] mx-auto w-full">
-                <img
+                <Image
                   src="/assets/memoria-aeterna-cover.png"
                   alt="Memoria Aeterna book cover"
-                  className="w-full rounded shadow-2xl"
+                  width={640}
+                  height={960}
+                  className="w-full rounded shadow-2xl h-auto"
+                  sizes="(max-width: 768px) 100vw, 320px"
+                  priority
                 />
               </div>
             </ScrollReveal>

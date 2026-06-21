@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import RootClient from "./RootClient";
 
@@ -17,6 +18,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://stevenkoehl.dev"),
   title: "Steven Koehl — Software Developer & Novelist",
   description:
     "Steven Koehl. USAF Technical Sergeant, software developer, and novelist. Building open-source tools and writing Memoria Aeterna, a literary historical fiction novel spanning 982 years of Byzantine and Ottoman history.",
@@ -66,6 +68,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <RootClient>{children}</RootClient>
+        <Analytics />
       </body>
     </html>
   );
