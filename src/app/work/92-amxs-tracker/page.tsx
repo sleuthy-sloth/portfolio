@@ -52,7 +52,7 @@ export default function AmxsTrackerPage() {
           <div className="mx-auto max-w-[900px]">
             <ScrollReveal>
               <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
-                Maintenance Operations &middot; Full-Stack
+                Maintenance Operations / Full-Stack
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>

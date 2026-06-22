@@ -50,7 +50,7 @@ export default function NeuralPulsePage() {
           <div className="mx-auto max-w-[900px]">
             <ScrollReveal>
               <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
-                Brain Training &middot; Open Source
+                Brain Training / Open Source
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
