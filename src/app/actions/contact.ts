@@ -9,6 +9,7 @@ interface ContactFormData {
 interface ContactResult {
   success: boolean;
   error?: string;
+  mailto?: string;
 }
 
 export async function submitContact(
@@ -30,21 +31,15 @@ export async function submitContact(
     return { success: false, error: "Message must be at least 10 characters." };
   }
 
-  // --- Email provider hook ---
-  // To send real emails, add Resend, SendGrid, or another provider here.
-  // Example with Resend:
-  //
-  //   import { Resend } from "resend";
-  //   const resend = new Resend(process.env.RESEND_API_KEY);
-  //   await resend.emails.send({
-  //     from: "portfolio@stevenkoehl.dev",
-  //     to: "spkoehl@gmail.com",
-  //     subject: `Portfolio contact from ${name}`,
-  //     text: `From: ${name} <${email}>\n\n${message}`,
-  //   });
-  //
-  // For now, this logs to console and returns success.
+  // Build mailto link as a working fallback
+  const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+  const body = encodeURIComponent(
+    `From: ${name} <${email}>\n\n${message}`,
+  );
+  const mailto = `mailto:spkoehl@gmail.com?subject=${subject}&body=${body}`;
+
+  // Log for server records
   console.log(`[Contact] ${name} <${email}>: ${message}`);
 
-  return { success: true };
+  return { success: true, mailto };
 }

@@ -79,29 +79,20 @@ export default function ProjectsGrid() {
   return (
     <section id="projects">
       <div className="mx-auto max-w-[1100px] px-6 py-24">
+        {/* Software Projects */}
         <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
           Selected Work
         </p>
         <h2 className="text-[clamp(28px,4vw,40px)] font-black tracking-[-1px] mb-12">
-          Projects
+          Software Projects
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {/* NeuralPulse — featured, spans 2 cols + 2 rows */}
           <ScrollReveal>
             <div className="md:col-span-2 md:row-span-2">
               <ProjectCard {...SOFTWARE_PROJECTS[0]} variant="featured" ghRepo="NeuralPulse" />
             </div>
-          </ScrollReveal>
-
-          {/* Military 1 — right column */}
-          <ScrollReveal delay={0.1}>
-            <ProjectCard {...MILITARY_ACHIEVEMENTS[0]} />
-          </ScrollReveal>
-
-          {/* Military 2 — right column */}
-          <ScrollReveal delay={0.15}>
-            <ProjectCard {...MILITARY_ACHIEVEMENTS[1]} />
           </ScrollReveal>
 
           {/* 92-AMXS — featured, spans 2 cols */}
@@ -111,15 +102,33 @@ export default function ProjectsGrid() {
             </div>
           </ScrollReveal>
 
-          {/* Military 3 — right column */}
-          <ScrollReveal delay={0.2}>
-            <ProjectCard {...MILITARY_ACHIEVEMENTS[2]} />
+          {/* Spacer card to fill the right column on desktop */}
+          <ScrollReveal delay={0.15}>
+            <div className="hidden md:block border border-dashed border-[var(--color-border)] p-7 flex flex-col items-center justify-center text-center min-h-[200px]">
+              <p className="text-[11px] font-bold uppercase tracking-[2px] text-[var(--color-text-muted)] mb-2">
+                More Soon
+              </p>
+              <p className="text-sm text-[var(--color-text-muted)]">
+                Iron Storm RTS and other projects in progress.
+              </p>
+            </div>
           </ScrollReveal>
+        </div>
 
-          {/* Military 4 — right column */}
-          <ScrollReveal delay={0.25}>
-            <ProjectCard {...MILITARY_ACHIEVEMENTS[3]} />
-          </ScrollReveal>
+        {/* Military Achievements */}
+        <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
+          Military Career
+        </p>
+        <h2 className="text-[clamp(28px,4vw,40px)] font-black tracking-[-1px] mb-12">
+          Key Achievements
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {MILITARY_ACHIEVEMENTS.map((project, i) => (
+            <ScrollReveal key={project.title} delay={i * 0.1}>
+              <ProjectCard {...project} />
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>

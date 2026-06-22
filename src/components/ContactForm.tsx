@@ -1,26 +1,41 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { submitContact } from "@/app/actions/contact";
 
 const initialState = { success: false, error: undefined as string | undefined };
 
 export default function ContactForm() {
   const [state, formAction, pending] = useActionState(submitContact, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // On success with mailto, open the email client
+  useEffect(() => {
+    if (state.success && state.mailto) {
+      window.location.href = state.mailto;
+    }
+  }, [state]);
 
   if (state.success) {
     return (
       <div className="text-center py-12">
-        <p className="text-[28px] font-black leading-none mb-4">Message sent.</p>
+        <p className="text-[28px] font-black leading-none mb-4">Opening your email client...</p>
         <p className="text-base text-[var(--color-text-muted)]">
-          Thanks for reaching out. I&apos;ll get back to you soon.
+          If nothing happened,{" "}
+          <a
+            href="mailto:spkoehl@gmail.com"
+            className="text-[var(--color-accent)] hover:underline"
+          >
+            click here to email directly
+          </a>
+          .
         </p>
       </div>
     );
   }
 
   return (
-    <form action={formAction} className="max-w-[480px] mx-auto text-left space-y-5">
+    <form ref={formRef} action={formAction} className="max-w-[480px] mx-auto text-left space-y-5">
       <div>
         <label htmlFor="name" className="block text-[11px] font-bold uppercase tracking-[2px] text-[var(--color-text-muted)] mb-2">
           Name

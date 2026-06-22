@@ -14,34 +14,48 @@ export default function AboutSection() {
   return (
     <section id="about" className="bg-[var(--color-bg-alt)]">
       <div className="mx-auto max-w-[1100px] px-6 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-16 items-start">
-          {/* Photo */}
-          <div className="relative aspect-square bg-[var(--color-border)] rounded overflow-hidden md:w-[220px]">
-            <Image
-              src="/assets/photo.jpg"
-              alt="Steven Koehl"
-              fill
-              className="object-cover"
-              sizes="220px"
-            />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 items-start">
+          {/* Photo + caption */}
+          <ScrollReveal>
+            <div className="relative aspect-square bg-[var(--color-border)] rounded overflow-hidden w-full max-w-[280px] mx-auto md:mx-0">
+              <Image
+                src="/assets/photo.jpg"
+                alt="Steven Koehl"
+                fill
+                className="object-cover"
+                sizes="280px"
+              />
+            </div>
+            <div className="mt-4 text-center md:text-left">
+              <p className="text-[11px] font-bold uppercase tracking-[2px] text-[var(--color-text-muted)]">
+                Fairchild AFB, WA
+              </p>
+            </div>
+          </ScrollReveal>
 
           {/* Bio */}
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
               About Me
             </p>
-            <p className="text-base text-[var(--color-text-muted)] leading-relaxed mb-10">
-              USAF Technical Sergeant and avionics technician with 18 years
-              of experience in circuit-level maintenance, program
-              management, and technical instruction. I&apos;ve managed $35M in
-              assets, recovered $7M in fleet costs through deficiency
-              reporting, and trained 800+ students with a 92% pass rate.
-              Currently serving as Senior AFREP Technician and AI
-              Developmental Lead at Fairchild AFB, while building
-              open-source software through the DoD SkillBridge program
-              before my June 2028 retirement.
-            </p>
+
+            <div className="space-y-4 text-base text-[var(--color-text-muted)] leading-relaxed mb-8">
+              <p>
+                USAF Technical Sergeant and avionics technician with 18 years
+                of experience in circuit-level maintenance, program
+                management, and technical instruction. I have managed $35M in
+                assets, recovered $7M in fleet costs through deficiency
+                reporting, and trained 800+ students with a 92% pass rate.
+              </p>
+              <p>
+                Currently serving as Senior AFREP Technician and AI
+                Developmental Lead at Fairchild AFB, while building
+                open-source software through the DoD SkillBridge program
+                before my June 2028 retirement. I hold a Master of Science in
+                Aeronautical Engineering from Embry-Riddle Aeronautical
+                University.
+              </p>
+            </div>
 
             {/* Stats */}
             <div className="flex flex-wrap gap-10">

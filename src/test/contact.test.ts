@@ -13,13 +13,17 @@ describe("submitContact", () => {
     return fd;
   }
 
-  it("returns success for valid input", async () => {
+  it("returns success and mailto for valid input", async () => {
     const result = await submitContact(
       { success: false },
       makeFormData("Jane Doe", "jane@example.com", "Hello, this is a test message."),
     );
     expect(result.success).toBe(true);
     expect(result.error).toBeUndefined();
+    expect(result.mailto).toBeDefined();
+    expect(result.mailto).toContain("mailto:spkoehl@gmail.com");
+    expect(result.mailto).toContain("subject=");
+    expect(result.mailto).toContain("body=");
   });
 
   it("rejects names shorter than 2 characters", async () => {

@@ -11,6 +11,11 @@ const navLinks = [
 ];
 
 export default function NowPage() {
+  const lastUpdated = new Date().toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+
   return (
     <>
       <Nav links={navLinks} />
@@ -48,33 +53,39 @@ export default function NowPage() {
               <ScrollReveal delay={0.2}>
                 <section>
                   <h2 className="text-sm font-bold uppercase tracking-[2px] text-[var(--color-text)] mb-3 pb-2 border-b border-[var(--color-border)]">
-                    Current Projects
+                    Building
                   </h2>
                   <ul className="space-y-3">
                     <li className="flex gap-3">
-                      <span className="text-[var(--color-accent)] shrink-0">—</span>
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
                       <span>
                         <strong className="text-[var(--color-text)]">NeuralPulse:</strong>{" "}
                         Open-source brain training PWA. 13 games, daily challenges,
-                        stats dashboard. Preparing for Vercel deployment and public
-                        launch.
+                        stats dashboard. Live on Vercel, adding tests and SEO.
                       </span>
                     </li>
                     <li className="flex gap-3">
-                      <span className="text-[var(--color-accent)] shrink-0">—</span>
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
                       <span>
                         <strong className="text-[var(--color-text)]">92 AMXS Tracker:</strong>{" "}
                         Maintenance operations platform for the 92nd AMXS. Live
-                        demo deployed, iterating on user feedback from squadron
+                        demo deployed, iterating on feedback from squadron
                         maintainers.
                       </span>
                     </li>
                     <li className="flex gap-3">
-                      <span className="text-[var(--color-accent)] shrink-0">—</span>
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
                       <span>
-                        <strong className="text-[var(--color-text)]">Portfolio:</strong>{" "}
-                        This site. Next.js 16, Tailwind v4, deployed on Vercel.
-                        Always improving.
+                        <strong className="text-[var(--color-text)]">Iron Storm:</strong>{" "}
+                        Isometric RTS game in Godot 4.6.3. v0.2 in progress.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
+                      <span>
+                        <strong className="text-[var(--color-text)]">This site:</strong>{" "}
+                        Portfolio and writing showcase. Next.js 16, Tailwind v4,
+                        auto-deployed on Vercel. Always improving.
                       </span>
                     </li>
                   </ul>
@@ -90,7 +101,7 @@ export default function NowPage() {
                     <em className="text-[var(--color-text)]">Memoria Aeterna</em>{" "}
                     is complete at 720 pages across 46 chapters. The manuscript
                     is available to literary agents and publishers upon request.
-                    Currently exploring publishing options and writing short
+                    Currently exploring publishing options and drafting short
                     fiction on the side.
                   </p>
                 </section>
@@ -103,15 +114,15 @@ export default function NowPage() {
                   </h2>
                   <ul className="space-y-3">
                     <li className="flex gap-3">
-                      <span className="text-[var(--color-accent)] shrink-0">—</span>
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
                       <span>Deepening TypeScript and systems design patterns</span>
                     </li>
                     <li className="flex gap-3">
-                      <span className="text-[var(--color-accent)] shrink-0">—</span>
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
                       <span>Exploring AI/ML integration in web applications</span>
                     </li>
                     <li className="flex gap-3">
-                      <span className="text-[var(--color-accent)] shrink-0">—</span>
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
                       <span>Reading Byzantine history for the next novel</span>
                     </li>
                   </ul>
@@ -119,6 +130,37 @@ export default function NowPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.35}>
+                <section>
+                  <h2 className="text-sm font-bold uppercase tracking-[2px] text-[var(--color-text)] mb-3 pb-2 border-b border-[var(--color-border)]">
+                    Reading
+                  </h2>
+                  <ul className="space-y-3">
+                    <li className="flex gap-3">
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
+                      <span>
+                        <strong className="text-[var(--color-text)]">The Alexiad</strong>{" "}
+                        by Anna Komnene — primary source for the next novel
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
+                      <span>
+                        <strong className="text-[var(--color-text)]">Designing Data-Intensive Applications</strong>{" "}
+                        by Martin Kleppmann
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-[var(--color-accent)] shrink-0">&mdash;</span>
+                      <span>
+                        <strong className="text-[var(--color-text)]">Byzantium: The Surprising Life of a Medieval Empire</strong>{" "}
+                        by Judith Herrin
+                      </span>
+                    </li>
+                  </ul>
+                </section>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.4}>
                 <p className="text-sm italic text-[var(--color-text-muted)] pt-6 border-t border-[var(--color-border)]">
                   This is a{" "}
                   <a
@@ -129,12 +171,7 @@ export default function NowPage() {
                   >
                     /now page
                   </a>
-                  , inspired by Derek Sivers. Last updated:{" "}
-                  {new Date().toLocaleDateString("en-US", {
-                    month: "long",
-                    year: "numeric",
-                  })}
-                  .
+                  , inspired by Derek Sivers. Last updated: {lastUpdated}.
                 </p>
               </ScrollReveal>
             </div>

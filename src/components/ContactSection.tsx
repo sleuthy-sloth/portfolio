@@ -1,7 +1,5 @@
 import ContactForm from "@/components/ContactForm";
 
-const currentYear = new Date().getFullYear();
-
 export default function ContactSection() {
   return (
     <section id="contact" className="bg-[var(--color-dark-surface)] text-white">
@@ -56,11 +54,6 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
-
-      {/* Sub-footer inside contact section */}
-      <p className="text-center text-xs text-[var(--color-text-muted)] py-5 px-6 border-t border-[var(--color-dark-border)]">
-        &copy; {currentYear} Steven Koehl. All rights reserved.
-      </p>
     </section>
   );
 }

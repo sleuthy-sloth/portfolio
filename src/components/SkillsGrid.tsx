@@ -2,17 +2,23 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const SKILLS = [
   {
-    group: "Software Development",
+    group: "Frontend & Frameworks",
     items: [
       "TypeScript / JavaScript",
       "React 19 / Next.js 16",
       "Tailwind CSS / Vite",
-      "Firebase / Supabase",
       "Zustand / IndexedDB",
       "PWA / Workbox",
-      "Vitest / Testing Library",
-      "Git / GitHub Actions CI/CD",
+    ],
+  },
+  {
+    group: "Backend & Data",
+    items: [
+      "Firebase / Supabase",
+      "Cloud Computing",
+      "AI Integration",
       "Zod / jsPDF / SheetJS",
+      "REST / GraphQL",
     ],
   },
   {
@@ -22,30 +28,17 @@ const SKILLS = [
       "Micro-Miniature Circuit Card Repair",
       "Component-Level Diagnostics",
       "Soldering & Circuit Analysis",
-      "Aeronautics",
       "AutoCAD",
     ],
   },
   {
-    group: "Tools & Systems",
-    items: [
-      "ETIMS / Technical Orders",
-      "JDRS Deficiency Reporting",
-      "Cloud Computing",
-      "AI Integration",
-      "Microsoft Office Suite",
-      "Analytical & Data Tools",
-    ],
-  },
-  {
-    group: "Leadership",
+    group: "Leadership & Process",
     items: [
       "Program Management",
       "Contract Oversight (COR)",
       "Instructional System Design",
       "Team Building & Mentorship",
       "Continuous Improvement",
-      "Risk Mitigation",
     ],
   },
 ];
