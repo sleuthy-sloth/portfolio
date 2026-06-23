@@ -1,7 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import Link from "next/link";
 
 const navLinks = [
   { href: "/", label: "Home" },

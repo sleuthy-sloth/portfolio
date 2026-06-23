@@ -174,13 +174,13 @@ export default function CommandPalette() {
       )
     : COMMANDS;
 
-  // Reset selection when query changes
-  useEffect(() => {
-    setSelectedIndex(0);
-  }, [query]);
-
-  // Clamp selected index
   const safeIndex = Math.min(selectedIndex, Math.max(0, filtered.length - 1));
+
+  // Reset selection when query changes
+  const handleQueryChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+    setSelectedIndex(0);
+  }, []);
 
   // Keyboard shortcut listener
   useEffect(() => {
@@ -198,16 +198,20 @@ export default function CommandPalette() {
   useEffect(() => {
     if (open) {
       setTimeout(() => inputRef.current?.focus(), 50);
-    } else {
-      setQuery("");
-      setSelectedIndex(0);
     }
   }, [open]);
+
+  // Close and reset
+  const closePalette = useCallback(() => {
+    setOpen(false);
+    setQuery("");
+    setSelectedIndex(0);
+  }, []);
 
   // Execute command
   const execute = useCallback(
     (cmd: Command) => {
-      setOpen(false);
+      closePalette();
       if (cmd.kind === "page") {
         router.push(cmd.href);
       } else if (cmd.kind === "section") {
@@ -224,7 +228,7 @@ export default function CommandPalette() {
         window.open(cmd.href, "_blank", "noopener noreferrer");
       }
     },
-    [router],
+    [router, closePalette],
   );
 
   // Keyboard navigation inside palette
@@ -241,7 +245,7 @@ export default function CommandPalette() {
         execute(filtered[safeIndex]);
       }
     } else if (e.key === "Escape") {
-      setOpen(false);
+      closePalette();
     }
   }
 
@@ -267,7 +271,7 @@ export default function CommandPalette() {
       {/* Backdrop */}
       <div
         className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm"
-        onClick={() => setOpen(false)}
+        onClick={closePalette}
       />
 
       {/* Palette */}
@@ -293,7 +297,7 @@ export default function CommandPalette() {
             ref={inputRef}
             type="text"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={handleQueryChange}
             placeholder="Search pages, sections, links..."
             className="flex-1 bg-transparent text-[15px] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] outline-none"
             spellCheck={false}
@@ -388,7 +392,7 @@ export default function CommandPalette() {
 
           {filtered.length === 0 && (
             <p className="px-3 py-8 text-center text-sm text-[var(--color-text-muted)]">
-              No results for "{query}"
+              No results for &ldquo;{query}&rdquo;
             </p>
           )}
         </div>

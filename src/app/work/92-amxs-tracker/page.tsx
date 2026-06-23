@@ -107,7 +107,7 @@ export default function AmxsTrackerPage() {
                   781s, status boards, TCTO tracking, training records — all
                   of it lives in binders, logbooks, and Excel spreadsheets
                   scattered across different offices. When a commander asks
-                  "what's the fleet status right now," someone has to walk the
+                  &ldquo;what&rsquo;s the fleet status right now,&rdquo; someone has to walk the
                   flightline and physically check.
                 </p>
               </ScrollReveal>

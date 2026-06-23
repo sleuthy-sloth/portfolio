@@ -1,11 +1,5 @@
 "use server";
 
-interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
 interface ContactResult {
   success: boolean;
   error?: string;

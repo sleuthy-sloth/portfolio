@@ -33,27 +33,25 @@ async function fetchRepoStats(
 }
 
 export default function GitHubStars({ repo }: { repo: string }) {
-  const [stats, setStats] = useState<RepoStats | null>(null);
-
-  useEffect(() => {
-    const fullName = `sleuthy-sloth/${repo}`;
-
-    // Check cache
+  const [stats, setStats] = useState<RepoStats | null>(() => {
+    // Read cache synchronously on mount
     try {
       const cached = localStorage.getItem(CACHE_KEY);
       if (cached) {
         const parsed: CacheEntry = JSON.parse(cached);
-        if (
-          Date.now() - parsed.timestamp < CACHE_TTL &&
-          parsed.stats[fullName]
-        ) {
-          setStats(parsed.stats[fullName]);
-          return;
+        const fullName = `sleuthy-sloth/${repo}`;
+        if (Date.now() - parsed.timestamp < CACHE_TTL && parsed.stats[fullName]) {
+          return parsed.stats[fullName];
         }
       }
-    } catch {
-      // ignore
-    }
+    } catch { /* ignore */ }
+    return null;
+  });
+
+  useEffect(() => {
+    // Only fetch if no cached data — stats starts non-null when cache hits
+    if (stats !== null) return;
+    const fullName = `sleuthy-sloth/${repo}`;
 
     // Fetch fresh
     fetchRepoStats("sleuthy-sloth", repo)
@@ -74,7 +72,7 @@ export default function GitHubStars({ repo }: { repo: string }) {
       .catch(() => {
         // Silently fail — stars are decorative
       });
-  }, [repo]);
+  }, [repo, stats]);
 
   if (!stats) return null;
 

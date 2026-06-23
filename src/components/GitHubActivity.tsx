@@ -40,10 +40,6 @@ const GITHUB_USER = "sleuthy-sloth";
 /** Format a GitHub event into a human-readable one-liner. */
 function formatEvent(event: Event): string {
   const repo = event.repo.name.replace(`${GITHUB_USER}/`, "");
-  const time = new Date(event.created_at).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-  });
 
   switch (event.type) {
     case "PushEvent": {
@@ -80,25 +76,35 @@ function formatEvent(event: Event): string {
 }
 
 export default function GitHubActivity() {
-  const [events, setEvents] = useState<Event[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    // Check cache first
+  const [events, setEvents] = useState<Event[]>(() => {
+    // Read cache synchronously on mount
     try {
       const cached = localStorage.getItem(CACHE_KEY);
       if (cached) {
         const parsed: CacheEntry = JSON.parse(cached);
         if (Date.now() - parsed.timestamp < CACHE_TTL) {
-          setEvents(parsed.events.slice(0, 8));
-          setLoading(false);
-          return;
+          return parsed.events.slice(0, 8);
         }
       }
-    } catch {
-      // localStorage unavailable or corrupted — fetch fresh
-    }
+    } catch { /* ignore */ }
+    return [];
+  });
+  const [loading, setLoading] = useState(() => {
+    // Already have cached data — skip loading state
+    try {
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const parsed: CacheEntry = JSON.parse(cached);
+        if (Date.now() - parsed.timestamp < CACHE_TTL) return false;
+      }
+    } catch { /* ignore */ }
+    return true;
+  });
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    // Only fetch if we don't have cached data
+    if (!loading) return;
 
     // Fetch from GitHub API
     const headers: Record<string, string> = {};
@@ -125,7 +131,7 @@ export default function GitHubActivity() {
       })
       .catch(() => setError(true))
       .finally(() => setLoading(false));
-  }, []);
+  }, [loading]);
 
   return (
     <div className="border border-[var(--color-border)] rounded-sm overflow-hidden">

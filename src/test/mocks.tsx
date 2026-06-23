@@ -37,10 +37,15 @@ vi.mock("next/link", () => ({
 
 // Mock framer-motion fully
 vi.mock("framer-motion", () => {
-  const createMotionComponent = (tag: string) => (props: Record<string, unknown>) =>
-    React.createElement(tag, props);
+  const createMotionComponent = (tag: string) => {
+    const Component = (props: Record<string, unknown>) =>
+      React.createElement(tag, props);
+    Component.displayName = `Motion${tag}`;
+    return Component;
+  };
   const Group = (props: Record<string, unknown>) =>
     React.createElement(React.Fragment, {}, props.children as React.ReactNode);
+  Group.displayName = "MotionGroup";
 
   const unsubscribe = vi.fn();
   const mockMotionValue = {
