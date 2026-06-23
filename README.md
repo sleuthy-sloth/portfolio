@@ -1,36 +1,41 @@
 # Portfolio
 
-> Personal portfolio site. USAF Technical Sergeant, avionics technician, M.S. Aeronautical Engineering, software developer in transition. Retiring June 2028 and building what comes next.
+> **Live:** [portfolio-two-ochre-vxl9gmenfz.vercel.app](https://portfolio-two-ochre-vxl9gmenfz.vercel.app)
 
-[![Star on GitHub](https://img.shields.io/github/stars/sleuthy-sloth/portfolio?style=social)](https://github.com/sleuthy-sloth/portfolio)
 [![CI](https://github.com/sleuthy-sloth/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/sleuthy-sloth/portfolio/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-This site collects my projects, skills, and professional background. 18 years fixing jets and leading airmen, now building open-source software through the DoD SkillBridge program.
+Personal portfolio and writing showcase. Two identities, one site.
 
-## What's On It
+I'm a USAF Technical Sergeant and avionics technician with 18 years of service, transitioning into civilian software development through the DoD SkillBridge program. This site is where my engineering work and my writing share the same roof.
 
-- **Software Projects** — NeuralPulse (brain training) and 92 AMXS Tracker (maintenance ops)
-- **Military Achievements** — PQDR program, $35M management, AI lead initiative, training curriculum
-- **Skills** — Software development stack + avionics + leadership
-- **Writing** — Memoria Aeterna novel (synopsis, excerpt, agent contact)
-- **Contact** — Email, LinkedIn, GitHub
+## The Two Sides
+
+**Engineering** (`/work`) — Red accent. Software projects, military achievements, skills, and contact.
+
+**Writing** (`/writing`) — Gold accent. Memoria Aeterna, a 720-page literary historical fiction novel about an immortal man searching for the woman he loves across 982 years of Byzantine and Ottoman history. Synopsis, first chapter, and agent/publisher inquiry information.
+
+## What's on the Site
+
+- **Software Projects** — NeuralPulse (13 brain games, PWA) and 92 AMXS Tracker (maintenance command center)
+- **Military Career** — $35M asset management, $7M fleet cost recovery, 800+ students trained, AI developmental lead
+- **Skills** — TypeScript, React, Next.js, Firebase, Supabase + avionics and leadership
+- **Writing** — Novel synopsis, Chapter 1 excerpt, agent/publisher contact
+- **/now page** — What I'm building, learning, and reading right now
+- **[Cmd+K](https://portfolio-two-ochre-vxl9gmenfz.vercel.app/work)** command palette for quick navigation
 
 ## Tech Stack
 
-Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion. Deployed to Vercel.
+Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion. Auto-deployed on Vercel.
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
 npm run build    # Production build
-npm run test     # Run tests
-npm run lint     # Lint check
+npm run test     # 24 tests
+npm run lint     # ESLint
 ```
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and guidelines.
 
 ## License
 
-CC BY-NC 4.0 — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE).
