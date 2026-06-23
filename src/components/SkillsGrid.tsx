@@ -45,7 +45,7 @@ const SKILLS = [
 
 export default function SkillsGrid() {
   return (
-    <section id="skills" className="bg-[var(--color-bg-alt)]">
+    <section id="skills" className="bg-[var(--color-bg)]">
       <div className="mx-auto max-w-[1100px] px-6 py-24">
         <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
           Technical Skills

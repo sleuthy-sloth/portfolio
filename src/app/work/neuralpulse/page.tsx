@@ -205,12 +205,20 @@ export default function NeuralPulsePage() {
             <ScrollReveal delay={0.15}>
               <div className="flex flex-wrap gap-4 justify-center mb-12">
                 <a
-                  href="https://github.com/sleuthy-sloth/NeuralPulse"
+                  href="https://neuralpulse.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-[var(--color-accent)] text-white px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:opacity-85 transition-opacity"
                 >
-                  Source Code on GitHub
+                  Live Demo
+                </a>
+                <a
+                  href="https://github.com/sleuthy-sloth/NeuralPulse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border-2 border-[var(--color-text)] text-[var(--color-text)] px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:bg-[var(--color-text)] hover:text-white transition-colors"
+                >
+                  Source Code
                 </a>
               </div>
             </ScrollReveal>

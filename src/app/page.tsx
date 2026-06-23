@@ -55,7 +55,7 @@ export default function HomePage() {
                 href="/work"
                 identity="engineering"
                 label="Software & Engineering"
-                title="From Flightlines\nTo Code"
+                title={"From Flightlines\nTo Code"}
                 description="Open-source projects, military achievements, and the tech stack I use to build them. NeuralPulse, the 92 AMXS Tracker, and the career that led from avionics benches to keyboards."
                 tags={["TypeScript", "React / Next.js", "Firebase / Supabase"]}
               />
@@ -66,7 +66,7 @@ export default function HomePage() {
                 href="/writing"
                 identity="writing"
                 label="Writing"
-                title="Memoria\nAeterna"
+                title={"Memoria\nAeterna"}
                 description="A novel about an immortal man searching for the woman he loves across 982 years of Byzantine and Ottoman history. Synopsis, sample chapter, and information for literary contacts."
                 tags={["Literary Fiction", "Historical", "First Novel"]}
               />

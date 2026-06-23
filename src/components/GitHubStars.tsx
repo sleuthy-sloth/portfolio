@@ -19,7 +19,11 @@ async function fetchRepoStats(
   owner: string,
   repo: string,
 ): Promise<RepoStats> {
-  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+  const headers: Record<string, string> = {};
+  if (process.env.NEXT_PUBLIC_GITHUB_TOKEN) {
+    headers["Authorization"] = `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`;
+  }
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, { headers });
   if (!res.ok) throw new Error("API error");
   const data = await res.json();
   return {

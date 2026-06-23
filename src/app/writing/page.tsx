@@ -25,7 +25,7 @@ export default function WritingPage() {
     <>
       <Nav links={navLinks} />
 
-      <main className="flex-1" id="main-content">
+      <main className="flex-1" id="main-content" data-page="writing">
         {/* ── Book Hero ── */}
         <section
           id="book-hero"

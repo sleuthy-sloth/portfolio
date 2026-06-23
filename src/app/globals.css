@@ -115,3 +115,15 @@ body {
 [data-scroll-reveal] {
   will-change: transform, opacity;
 }
+
+/* ── Writing Identity Overrides ─────────────────── */
+
+/* On writing pages, swap accent from red to gold */
+[data-page="writing"] :focus-visible {
+  outline-color: var(--color-gold);
+}
+
+[data-page="writing"] a.text-\[var\(--color-accent\)\],
+[data-page="writing"] footer a:hover {
+  color: var(--color-gold);
+}

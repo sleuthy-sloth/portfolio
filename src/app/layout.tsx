@@ -17,8 +17,10 @@ const sourceSerif = Source_Serif_4({
   weight: ["400", "600"],
 });
 
+const SITE_URL = "https://portfolio-two-ochre-vxl9gmenfz.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-two-ochre-vxl9gmenfz.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: "Steven Koehl — Software Developer & Novelist",
   description:
     "Steven Koehl. USAF Technical Sergeant, software developer, and novelist. Building open-source tools and writing Memoria Aeterna, a literary historical fiction novel spanning 982 years of Byzantine and Ottoman history.",
@@ -26,8 +28,8 @@ export const metadata: Metadata = {
     type: "website",
     title: "Steven Koehl — Software Developer & Novelist",
     description: "USAF TSgt, software developer, and novelist. Two sides of one site.",
-    url: "https://portfolio-two-ochre-vxl9gmenfz.vercel.app",
-    images: ["https://portfolio-two-ochre-vxl9gmenfz.vercel.app/assets/photo.jpg"],
+    url: SITE_URL,
+    images: [`${SITE_URL}/assets/photo.jpg`],
   },
 };
 

@@ -101,7 +101,12 @@ export default function GitHubActivity() {
     }
 
     // Fetch from GitHub API
-    fetch(`https://api.github.com/users/${GITHUB_USER}/events/public?per_page=30`)
+    const headers: Record<string, string> = {};
+    if (process.env.NEXT_PUBLIC_GITHUB_TOKEN) {
+      headers["Authorization"] = `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`;
+    }
+
+    fetch(`https://api.github.com/users/${GITHUB_USER}/events/public?per_page=30`, { headers })
       .then((res) => {
         if (!res.ok) throw new Error("API error");
         return res.json();

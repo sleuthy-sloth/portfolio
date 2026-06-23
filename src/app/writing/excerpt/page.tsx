@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -7,9 +8,20 @@ import ScrollReveal from "@/components/ScrollReveal";
  * Excerpt page (/writing/excerpt) — Chapter 1 of Memoria Aeterna.
  *
  * Reading-optimized typography: Source Serif 4, generous line-height,
- * indented paragraphs. Each paragraph reveals as the reader scrolls.
+ * indented paragraphs. Paragraphs reveal in batches on scroll.
  * Identical nav to the writing section.
  */
+
+export const metadata: Metadata = {
+  title: "Memoria Aeterna — Letting the Palace Fall (Chapter 1)",
+  description:
+    "Read the first chapter of Memoria Aeterna, a literary historical fiction novel about an immortal man searching for the woman he loves across 982 years of Byzantine and Ottoman history.",
+  openGraph: {
+    title: "Memoria Aeterna — Letting the Palace Fall",
+    description:
+      "Chapter 1 of Memoria Aeterna: Konstantin, a 391-year-old immortal, follows a lead to an archaeological dig in Istanbul. Literary historical fiction spanning Byzantium to the modern day.",
+  },
+};
 
 /** Chapter 1 text, split into paragraphs for staggered reveal. */
 const CHAPTER_PARAGRAPHS = [
@@ -97,7 +109,7 @@ export default function ExcerptPage() {
     <>
       <Nav links={navLinks} />
 
-      <main className="flex-1" id="main-content">
+      <main className="flex-1" id="main-content" data-page="writing">
         <article className="max-w-[680px] mx-auto px-6 pt-[calc(var(--nav-height)+64px)] pb-24">
           {/* Header */}
           <header className="text-center mb-12">
@@ -121,13 +133,19 @@ export default function ExcerptPage() {
             </ScrollReveal>
           </header>
 
-          {/* Chapter text — each paragraph reveals on scroll */}
+          {/* Chapter text — paragraphs reveal in batches on scroll */}
           <div className="font-[var(--font-serif)] text-lg leading-relaxed text-[var(--color-text)] prose-excerpt">
-            {CHAPTER_PARAGRAPHS.map((text, i) => (
-              <ScrollReveal key={i} delay={i * 0.04} direction="up">
-                <p>{text.trim()}</p>
-              </ScrollReveal>
-            ))}
+            {Array.from({ length: Math.ceil(CHAPTER_PARAGRAPHS.length / 6) }).map(
+              (_, batchIdx) => (
+                <ScrollReveal key={batchIdx} delay={batchIdx * 0.15} direction="up">
+                  {CHAPTER_PARAGRAPHS.slice(batchIdx * 6, (batchIdx + 1) * 6).map(
+                    (text, i) => (
+                      <p key={i}>{text.trim()}</p>
+                    )
+                  )}
+                </ScrollReveal>
+              )
+            )}
           </div>
 
           {/* Footer */}
