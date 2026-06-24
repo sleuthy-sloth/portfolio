@@ -27,6 +27,17 @@ const SOFTWARE_PROJECTS: Project[] = [
     ],
   },
   {
+    title: "OpenNarrator",
+    category: "Audiobook Creator",
+    description:
+      "Open-source audiobook factory. Drop in an ebook, get back a chaptered M4B audiobook. 16 Kokoro TTS voices, web UI + CLI + GitHub Action. No API keys, no cloud services, no vendor lock-in. Installs via Homebrew or pip.",
+    tags: ["Python", "Kokoro TTS", "FastAPI", "ffmpeg", "GitHub Action"],
+    links: [
+      { href: "/work/opennarrator", label: "Case Study", external: false },
+      { href: "https://github.com/sleuthy-sloth/opennarrator", label: "Source Code", external: true },
+    ],
+  },
+  {
     title: "92 AMXS Tracker",
     category: "Maintenance Operations",
     description:
@@ -95,15 +106,22 @@ export default function ProjectsGrid() {
             </div>
           </ScrollReveal>
 
-          {/* 92-AMXS — featured, spans 2 cols */}
+          {/* OpenNarrator — featured, spans 2 cols */}
           <ScrollReveal delay={0.1}>
             <div className="md:col-span-2">
-              <ProjectCard {...SOFTWARE_PROJECTS[1]} variant="featured" ghRepo="92-AMXS-Tracker" />
+              <ProjectCard {...SOFTWARE_PROJECTS[1]} variant="featured" ghRepo="opennarrator" />
+            </div>
+          </ScrollReveal>
+
+          {/* 92-AMXS — featured, spans 2 cols */}
+          <ScrollReveal delay={0.15}>
+            <div className="md:col-span-2">
+              <ProjectCard {...SOFTWARE_PROJECTS[2]} variant="featured" ghRepo="92-AMXS-Tracker" />
             </div>
           </ScrollReveal>
 
           {/* Spacer card to fill the right column on desktop */}
-          <ScrollReveal delay={0.15}>
+          <ScrollReveal delay={0.2}>
             <div className="hidden md:block border border-dashed border-[var(--color-border)] p-7 flex flex-col items-center justify-center text-center min-h-[200px]">
               <p className="text-[11px] font-bold uppercase tracking-[2px] text-[var(--color-text-muted)] mb-2">
                 More Soon

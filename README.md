@@ -17,7 +17,7 @@ I'm a USAF Technical Sergeant and avionics technician with 18 years of service, 
 
 ## What's on the Site
 
-- **Software Projects** — NeuralPulse (13 brain games, PWA) and 92 AMXS Tracker (maintenance command center)
+- **Software Projects** — OpenNarrator (audiobook creator), NeuralPulse (13 brain games, PWA), and 92 AMXS Tracker (maintenance command center)
 - **Military Career** — $35M asset management, $7M fleet cost recovery, 800+ students trained, AI developmental lead
 - **Skills** — TypeScript, React, Next.js, Firebase, Supabase + avionics and leadership
 - **Writing** — Novel synopsis, Chapter 1 excerpt, agent/publisher contact
