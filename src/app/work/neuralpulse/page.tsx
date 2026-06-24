@@ -3,6 +3,18 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "NeuralPulse Case Study — Steven Koehl",
+  description:
+    "Open-source brain training PWA with 13 games, daily challenges, and stats dashboard. Built with Next.js, TypeScript, Supabase, and Zustand.",
+  openGraph: {
+    title: "NeuralPulse — Brain Training App Case Study",
+    description:
+      "An open-source brain training web app. 13 games, daily challenges, stats dashboard. Free and playable in your browser.",
+  },
+};
 
 /**
  * NeuralPulse case study (/work/neuralpulse).

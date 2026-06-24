@@ -337,7 +337,7 @@ export default function CommandPalette() {
                         : "text-[var(--color-text)] hover:bg-[var(--color-bg-alt)]"
                     }`}
                   >
-                    <span className="text-base shrink-0">{cmd.icon}</span>
+                    <span className="text-base shrink-0" aria-hidden="true">{cmd.icon}</span>
                     <div className="flex-1 min-w-0">
                       <span
                         className={`text-sm font-medium ${

@@ -44,7 +44,7 @@ export default function ForkCard({
       >
         {label}
       </p>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-black leading-[1.1] mb-5 transition-colors duration-300 group-hover:text-[var(--color-gold)]">
+      <h2 className="text-[clamp(28px,4vw,40px)] font-black leading-[1.1] mb-5 transition-colors duration-300 group-hover:text-[var(--color-accent)]">
         {title.split("\n").map((line, i) => (
           <span key={i}>
             {i > 0 && <br />}

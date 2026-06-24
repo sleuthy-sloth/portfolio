@@ -106,13 +106,8 @@ export default function GitHubActivity() {
     // Only fetch if we don't have cached data
     if (!loading) return;
 
-    // Fetch from GitHub API
-    const headers: Record<string, string> = {};
-    if (process.env.NEXT_PUBLIC_GITHUB_TOKEN) {
-      headers["Authorization"] = `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`;
-    }
-
-    fetch(`https://api.github.com/users/${GITHUB_USER}/events/public?per_page=30`, { headers })
+    // Fetch from GitHub API (unauthenticated — hourly caching is sufficient)
+    fetch(`https://api.github.com/users/${GITHUB_USER}/events/public?per_page=30`)
       .then((res) => {
         if (!res.ok) throw new Error("API error");
         return res.json();

@@ -2,6 +2,18 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "OpenNarrator Case Study — Steven Koehl",
+  description:
+    "Open-source audiobook creator. Convert ebooks to chaptered M4B using open-source TTS. No API keys, no cloud services, no vendor lock-in.",
+  openGraph: {
+    title: "OpenNarrator — Audiobook Creator Case Study",
+    description:
+      "An open-source audiobook factory. Drop in an ebook, get back a chaptered M4B audiobook. 16 Kokoro TTS voices, web UI, CLI, and GitHub Actions CI.",
+  },
+};
 
 /**
  * OpenNarrator case study (/work/opennarrator).

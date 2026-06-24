@@ -3,6 +3,18 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "92 AMXS Tracker Case Study — Steven Koehl",
+  description:
+    "Maintenance operations platform for the 92nd Aircraft Maintenance Squadron at Fairchild AFB. Full-stack React, Firebase, AI-powered OCR for AF Forms.",
+  openGraph: {
+    title: "92 AMXS Tracker — Maintenance Platform Case Study",
+    description:
+      "A full-stack maintenance management platform replacing paper logbooks and spreadsheets with a real-time digital command center for tracking fleet readiness.",
+  },
+};
 
 /**
  * 92 AMXS Tracker case study (/work/92-amxs-tracker).

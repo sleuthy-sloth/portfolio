@@ -19,11 +19,9 @@ async function fetchRepoStats(
   owner: string,
   repo: string,
 ): Promise<RepoStats> {
-  const headers: Record<string, string> = {};
-  if (process.env.NEXT_PUBLIC_GITHUB_TOKEN) {
-    headers["Authorization"] = `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`;
-  }
-  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, { headers });
+  // Unauthenticated — GitHub API rate limits are generous enough for
+  // a personal portfolio with hourly localStorage caching.
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
   if (!res.ok) throw new Error("API error");
   const data = await res.json();
   return {

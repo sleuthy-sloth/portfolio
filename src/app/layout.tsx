@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Steven Koehl — Software Developer & Novelist",
     description: "USAF TSgt, software developer, and novelist. Two sides of one site.",
     url: SITE_URL,
-    images: [`${SITE_URL}/assets/photo.jpg`],
+    images: [`${SITE_URL}/assets/photo.png`],
   },
 };
 
@@ -57,6 +57,78 @@ export default function RootLayout({
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e63946'/><text x='50' y='72' font-size='60' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'>S</text></svg>"
+        />
+        {/* JSON-LD structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  name: "Steven Koehl",
+                  givenName: "Steven",
+                  familyName: "Koehl",
+                  email: "spkoehl@gmail.com",
+                  jobTitle: "Technical Sergeant",
+                  affiliation: {
+                    "@type": "Organization",
+                    name: "United States Air Force",
+                  },
+                  sameAs: [
+                    "https://github.com/sleuthy-sloth",
+                    "https://www.linkedin.com/in/steven-koehl",
+                  ],
+                  knowsAbout: [
+                    "Software Engineering",
+                    "TypeScript",
+                    "React",
+                    "Next.js",
+                    "Aircraft Maintenance",
+                    "Avionics",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  name: "Steven Koehl — Portfolio",
+                  url: "https://portfolio-two-ochre-vxl9gmenfz.vercel.app",
+                  description:
+                    "USAF Technical Sergeant, software developer, and novelist. Two sides of one life.",
+                },
+                {
+                  "@type": "Book",
+                  name: "Memoria Aeterna",
+                  author: {
+                    "@type": "Person",
+                    name: "Steven Koehl",
+                  },
+                  genre: ["Literary Fiction", "Historical Fiction"],
+                  description:
+                    "A novel about an immortal man searching for the woman he loves across 982 years of Byzantine and Ottoman history.",
+                  numberOfPages: 720,
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  name: "NeuralPulse",
+                  applicationCategory: "HealthApplication",
+                  operatingSystem: "Web",
+                  description:
+                    "Open-source brain training PWA with 13 games, daily challenges, and stats dashboard.",
+                  url: "https://neuralpulse.app",
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  name: "OpenNarrator",
+                  applicationCategory: "Multimedia",
+                  operatingSystem: "macOS, Linux",
+                  description:
+                    "Open-source audiobook creator. Convert ebooks to chaptered M4B using open-source TTS.",
+                  url: "https://github.com/sleuthy-sloth/opennarrator",
+                },
+              ],
+            }),
+          }}
         />
         {/* Skip-to-content for keyboard users */}
         <style>{`#skip-link:focus { top: 8px; }`}</style>

@@ -1,6 +1,18 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Now — Steven Koehl | Current Projects & Focus",
+  description:
+    "What Steven Koehl is doing now: SkillBridge transition, building NeuralPulse and the 92 AMXS Tracker, writing Memoria Aeterna, and learning TypeScript and AI/ML integration.",
+  openGraph: {
+    title: "Now — Steven Koehl",
+    description:
+      "Current projects, learning, and professional focus for Steven Koehl, USAF Technical Sergeant transitioning to civilian software development.",
+  },
+};
 
 const navLinks = [
   { href: "/", label: "Home" },
