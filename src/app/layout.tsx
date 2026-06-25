@@ -21,13 +21,13 @@ const SITE_URL = "https://portfolio-two-ochre-vxl9gmenfz.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Steven Koehl — Software Developer & Novelist",
+  title: "Steven Koehl — Software Developer & USAF Technical Sergeant",
   description:
-    "Steven Koehl. USAF Technical Sergeant, software developer, and novelist. Building open-source tools and writing Memoria Aeterna, a literary historical fiction novel spanning 982 years of Byzantine and Ottoman history.",
+    "Steven Koehl. USAF Technical Sergeant and software developer. Building open-source tools for aviation and brain training. Former avionics technician, current AI engineering lead. Memoria Aeterna, a literary historical fiction novel, is available to literary agents.",
   openGraph: {
     type: "website",
-    title: "Steven Koehl — Software Developer & Novelist",
-    description: "USAF TSgt, software developer, and novelist. Two sides of one site.",
+    title: "Steven Koehl — Software Developer & USAF Technical Sergeant",
+    description: "USAF TSgt and software developer. Open-source projects, military service, and writing.",
     url: SITE_URL,
     images: [`${SITE_URL}/assets/photo.png`],
   },
@@ -53,7 +53,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Inline favicon: red "S" for engineering, gold "M" for writing pages */}
+        {/* Inline favicon: red "S" for engineering */}
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e63946'/><text x='50' y='72' font-size='60' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'>S</text></svg>"
@@ -94,7 +94,7 @@ export default function RootLayout({
                   name: "Steven Koehl — Portfolio",
                   url: "https://portfolio-two-ochre-vxl9gmenfz.vercel.app",
                   description:
-                    "USAF Technical Sergeant, software developer, and novelist. Two sides of one life.",
+                    "USAF Technical Sergeant and software developer. Open-source projects and engineering portfolio.",
                 },
                 {
                   "@type": "Book",

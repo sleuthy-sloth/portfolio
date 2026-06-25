@@ -33,7 +33,7 @@ const COMMANDS: Command[] = [
   {
     id: "home",
     label: "Home",
-    description: "Landing page with fork cards",
+    description: "Engineering portfolio and projects",
     icon: "🏠",
     href: "/",
     kind: "page",
@@ -45,7 +45,7 @@ const COMMANDS: Command[] = [
     label: "Portfolio",
     description: "Engineering portfolio and projects",
     icon: "💻",
-    href: "/work",
+    href: "/",
     kind: "page",
     shortcut: "G P",
     category: "Navigate",
@@ -94,7 +94,7 @@ const COMMANDS: Command[] = [
     label: "About Me",
     description: "Bio, stats, and GitHub activity",
     icon: "👤",
-    href: "/work#about",
+    href: "/#about",
     kind: "section",
     category: "Jump to Section",
   },
@@ -103,7 +103,7 @@ const COMMANDS: Command[] = [
     label: "Projects",
     description: "Bento grid of software and military work",
     icon: "🗂️",
-    href: "/work#projects",
+    href: "/#projects",
     kind: "section",
     category: "Jump to Section",
   },
@@ -112,7 +112,7 @@ const COMMANDS: Command[] = [
     label: "Skills & Expertise",
     description: "Tech stack and professional skills",
     icon: "⚡",
-    href: "/work#skills",
+    href: "/#skills",
     kind: "section",
     category: "Jump to Section",
   },
@@ -121,7 +121,7 @@ const COMMANDS: Command[] = [
     label: "Contact",
     description: "Email, LinkedIn, GitHub links",
     icon: "✉️",
-    href: "/work#contact",
+    href: "/#contact",
     kind: "section",
     category: "Jump to Section",
   },
@@ -215,8 +215,8 @@ export default function CommandPalette() {
       if (cmd.kind === "page") {
         router.push(cmd.href);
       } else if (cmd.kind === "section") {
-        // If on /work, scroll; otherwise navigate then scroll
-        if (window.location.pathname === "/work") {
+        // If on /, scroll; otherwise navigate then scroll
+        if (window.location.pathname === "/") {
           const el = document.querySelector(cmd.href.split("#")[1] ? `#${cmd.href.split("#")[1]}` : "");
           if (el) {
             el.scrollIntoView({ behavior: "smooth" });

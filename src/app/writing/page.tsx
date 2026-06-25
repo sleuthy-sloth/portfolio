@@ -18,7 +18,6 @@ export default function WritingPage() {
     { href: "/writing/excerpt", label: "Excerpt" },
     { href: "/writing#author", label: "About the Author" },
     { href: "/writing#agent-contact", label: "Contact" },
-    { href: "/work", label: "Engineering", crossAccent: "engineering" as const },
   ];
 
   return (

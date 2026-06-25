@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 /**
  * Footer — Shared across all pages.
  *
  * Shows contact links (Gmail, Proton, LinkedIn, GitHub) and copyright.
+ * Also includes a subtle link to the Writing section.
  * The year is set client-side via a span that gets hydrated.
  */
 export default function Footer() {
@@ -36,6 +39,12 @@ export default function Footer() {
         >
           GitHub
         </a>
+        <Link
+          href="/writing"
+          className="inline-block text-[13px] font-medium text-[var(--color-gold)] hover:text-[var(--color-gold-light)] transition-colors py-2 min-h-[44px] min-w-[44px]"
+        >
+          Writing
+        </Link>
       </div>
       <p className="text-xs text-[var(--color-text-muted)]">
         &copy; {new Date().getFullYear()} Steven Koehl. All rights reserved.

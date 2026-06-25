@@ -1,75 +1,74 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import ForkCard from "@/components/ForkCard";
+import CommandPalette from "@/components/CommandPalette";
+import WorkHero from "@/components/WorkHero";
+import AboutSection from "@/components/AboutSection";
+import ProjectsGrid from "@/components/ProjectsGrid";
+import SkillsGrid from "@/components/SkillsGrid";
+import ContactSection from "@/components/ContactSection";
 import ScrollReveal from "@/components/ScrollReveal";
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Steven Koehl — Software Developer & USAF Technical Sergeant",
+  description:
+    "Open-source projects, military achievements, and the tech stack Steven Koehl uses to build them. NeuralPulse, the 92 AMXS Tracker, and the career that led from avionics benches to keyboards.",
+  openGraph: {
+    title: "Steven Koehl — Engineering Portfolio",
+    description:
+      "From flightlines to code: software engineering projects by Steven Koehl, USAF Technical Sergeant.",
+  },
+};
 
 /**
- * Landing page (/) — Hero intro + fork cards.
- *
- * Users choose between the Engineering portfolio and the Writing section.
- * No nav links shown on the landing page (just name + theme toggle).
+ * Root landing page (/) — Engineering portfolio focused on software,
+ * military achievements, and technical skills. Writing is demoted to
+ * a subtle footnote at the bottom.
  */
 export default function HomePage() {
+  const navLinks = [
+    { href: "/#about", label: "About" },
+    { href: "/#projects", label: "Projects" },
+    { href: "/#skills", label: "Skills" },
+    { href: "/#contact", label: "Contact" },
+  ];
+
   return (
     <>
-      <Nav />
+      <Nav links={navLinks} />
+      <CommandPalette />
 
       <main className="flex-1" id="main-content">
-        {/* Hero */}
-        <section className="flex min-h-[70vh] items-center justify-center px-6 pt-[calc(var(--nav-height)+48px)] pb-12">
-          <div className="max-w-[720px] text-center">
+        <WorkHero />
+        <AboutSection />
+        <ProjectsGrid />
+        <SkillsGrid />
+        <ContactSection />
+
+        {/* Also: I write fiction — subtle demoted mention */}
+        <section className="bg-[var(--color-bg-alt)] border-t border-[var(--color-border)]">
+          <div className="mx-auto max-w-[1100px] px-6 py-16 text-center">
             <ScrollReveal>
-              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
-                Steven Koehl
+              <p className="text-[10px] font-bold uppercase tracking-[2.5px] text-[var(--color-text-muted)] mb-4">
+                Also
               </p>
             </ScrollReveal>
-
             <ScrollReveal delay={0.1}>
-              <h1 className="text-[clamp(40px,7vw,72px)] font-black leading-none tracking-[-2px] mb-6">
-                Two sides
-                <br />
-                of one life.
-              </h1>
+              <p className="text-base text-[var(--color-text-muted)] max-w-[500px] mx-auto leading-relaxed mb-6">
+                I write fiction. Memoria Aeterna is a literary historical novel
+                about an immortal man searching for the woman he loves across
+                982 years of Byzantine and Ottoman history.
+              </p>
             </ScrollReveal>
-
             <ScrollReveal delay={0.15}>
-              <div className="w-12 h-1 bg-[var(--color-accent)] mx-auto mb-6" />
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <p className="text-[17px] leading-relaxed text-[var(--color-text-muted)] max-w-[600px] mx-auto">
-                USAF Technical Sergeant. Software developer. Novelist. 18 years
-                fixing jets, now building software through SkillBridge and writing
-                a literary historical fiction novel that spans 982 years of
-                Byzantine and Ottoman history.
-              </p>
-            </ScrollReveal>
-          </div>
-        </section>
-
-        {/* Fork cards */}
-        <section className="px-6 pb-24">
-          <div className="mx-auto grid max-w-[1100px] grid-cols-1 md:grid-cols-2 gap-6">
-            <ScrollReveal delay={0.1}>
-              <ForkCard
-                href="/work"
-                identity="engineering"
-                label="Software & Engineering"
-                title={"From Flightlines\nTo Code"}
-                description="Open-source projects, military achievements, and the tech stack I use to build them. NeuralPulse, the 92 AMXS Tracker, and the career that led from avionics benches to keyboards."
-                tags={["TypeScript", "React / Next.js", "Firebase / Supabase"]}
-              />
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <ForkCard
+              <Link
                 href="/writing"
-                identity="writing"
-                label="Writing"
-                title={"Memoria\nAeterna"}
-                description="A novel about an immortal man searching for the woman he loves across 982 years of Byzantine and Ottoman history. Synopsis, sample chapter, and information for literary contacts."
-                tags={["Literary Fiction", "Historical", "First Novel"]}
-              />
+                className="inline-flex items-center gap-1.5 text-[13px] font-bold uppercase tracking-[1.5px] text-[var(--color-gold)] hover:text-[var(--color-gold-light)] transition-colors"
+              >
+                Read about the novel
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">&rarr;</span>
+              </Link>
             </ScrollReveal>
           </div>
         </section>

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Steven Koehl — Software Developer & Novelist";
+export const alt = "Steven Koehl — Software Developer & USAF Technical Sergeant";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -23,7 +23,6 @@ export default function Image() {
         {/* Red accent bar */}
         <div style={{ display: "flex", gap: 4, marginBottom: 40 }}>
           <div style={{ width: 60, height: 4, background: "#e63946", borderRadius: 2 }} />
-          <div style={{ width: 60, height: 4, background: "#c9a227", borderRadius: 2 }} />
         </div>
 
         <div
@@ -49,7 +48,7 @@ export default function Image() {
             maxWidth: 700,
           }}
         >
-          Software Developer & Novelist
+          Software Developer & USAF Technical Sergeant
         </div>
 
         <div
@@ -61,9 +60,7 @@ export default function Image() {
             fontWeight: 600,
           }}
         >
-          <span style={{ color: "#e63946" }}>Engineering</span>
-          <span style={{ color: "#555" }}>·</span>
-          <span style={{ color: "#c9a227" }}>Writing</span>
+          <span style={{ color: "#e63946" }}>Engineering Portfolio</span>
         </div>
       </div>
     ),

@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import HomePage from "@/app/page";
-import WorkPage from "@/app/work/page";
 import WritingPage from "@/app/writing/page";
 import ExcerptPage from "@/app/writing/excerpt/page";
 import NeuralPulsePage from "@/app/work/neuralpulse/page";
@@ -10,23 +9,14 @@ import NowPage from "@/app/now/page";
 import NotFound from "@/app/not-found";
 
 describe("Portfolio — smoke tests", () => {
-  it("renders the landing page with fork cards", () => {
+  it("renders the landing page with engineering hero", () => {
     render(<HomePage />);
-    expect(
-      screen.getByText((content) => content.includes("Two sides")),
-    ).toBeInTheDocument();
-    expect(screen.getByText("Software & Engineering")).toBeInTheDocument();
-    expect(screen.getByText("Writing")).toBeInTheDocument();
-  });
-
-  it("renders the /work page with hero and sections", () => {
-    render(<WorkPage />);
     expect(
       screen.getByText((content) => content.includes("From Flightlines")),
     ).toBeInTheDocument();
-    const projectMatches = screen.getAllByText("Projects");
-    expect(projectMatches.length).toBeGreaterThanOrEqual(1);
-    expect(screen.getByText("Expertise")).toBeInTheDocument();
+    expect(
+      screen.getByText((content) => content.includes("To Code")),
+    ).toBeInTheDocument();
   });
 
   it("renders the /writing page with book synopsis", () => {
@@ -57,7 +47,7 @@ describe("Portfolio — smoke tests", () => {
     expect(screen.getByText("SkillBridge Transition")).toBeInTheDocument();
   });
 
-  it("renders the 404 page with fork cards", () => {
+  it("renders the 404 page", () => {
     render(<NotFound />);
     expect(
       screen.getByText((content) => content.includes("Page not")),
