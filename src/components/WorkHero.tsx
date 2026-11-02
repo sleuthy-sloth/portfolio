@@ -44,7 +44,7 @@ export default function WorkHero() {
                 See My Work
               </a>
               <a
-                href="/assets/cv.pdf"
+                href="/assets/Steven-Koehl-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block border-2 border-[var(--color-text)] text-[var(--color-text)] px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:bg-[var(--color-text)] hover:text-white transition-colors"

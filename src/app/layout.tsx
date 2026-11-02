@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import RootClient from "./RootClient";
 
@@ -17,7 +16,7 @@ const sourceSerif = Source_Serif_4({
   weight: ["400", "600"],
 });
 
-const SITE_URL = "https://portfolio-two-ochre-vxl9gmenfz.vercel.app";
+const SITE_URL = "https://portfolio-two-ochre-vxl9gmenfz.vercel.app"; // TODO: replace with final custom domain
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -56,7 +55,7 @@ export default function RootLayout({
         {/* Inline favicon: red "S" for engineering */}
         <link
           rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e63946'/><text x='50' y='72' font-size='60' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'>S</text></svg>"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23B94A36'/><text x='50' y='72' font-size='60' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'>S</text></svg>"
         />
         {/* JSON-LD structured data */}
         <script
@@ -146,7 +145,6 @@ export default function RootLayout({
           Skip to main content
         </a>
         <RootClient>{children}</RootClient>
-        <Analytics />
       </body>
     </html>
   );

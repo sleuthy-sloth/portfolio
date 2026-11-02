@@ -1,12 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
   turbopack: {
     root: __dirname,
   },
   images: {
-    formats: ["image/avif", "image/webp"],
+    unoptimized: true,
   },
+  trailingSlash: false,
 };
 
 export default nextConfig;

@@ -1,20 +1,51 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
-import { submitContact } from "@/app/actions/contact";
+import { useState } from "react";
+
+/**
+ * ContactForm — Static-hosting compatible.
+ *
+ * No server action. On submit, validates client-side and opens the user's
+ * email client via a mailto: link with the message pre-filled.
+ */
 
 const initialState = { success: false, error: undefined as string | undefined };
 
 export default function ContactForm() {
-  const [state, formAction, pending] = useActionState(submitContact, initialState);
-  const formRef = useRef<HTMLFormElement>(null);
+  const [state, setState] = useState(initialState);
+  const [pending, setPending] = useState(false);
 
-  // On success with mailto, open the email client
-  useEffect(() => {
-    if (state.success && state.mailto) {
-      window.location.href = state.mailto;
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setPending(true);
+    const form = e.currentTarget;
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim();
+
+    if (name.length < 2) {
+      setState({ success: false, error: "Name must be at least 2 characters." });
+      setPending(false);
+      return;
     }
-  }, [state]);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setState({ success: false, error: "Please enter a valid email address." });
+      setPending(false);
+      return;
+    }
+    if (message.length < 10) {
+      setState({ success: false, error: "Message must be at least 10 characters." });
+      setPending(false);
+      return;
+    }
+
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(`From: ${name} <${email}>\n\n${message}`);
+    const mailto = `mailto:spkoehl@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailto;
+    setState({ success: true, error: undefined });
+    setPending(false);
+  }
 
   if (state.success) {
     return (
@@ -35,7 +66,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form ref={formRef} action={formAction} className="max-w-[480px] mx-auto text-left space-y-5">
+    <form onSubmit={handleSubmit} className="max-w-[480px] mx-auto text-left space-y-5">
       <div>
         <label htmlFor="name" className="block text-[11px] font-bold uppercase tracking-[2px] text-[var(--color-text-muted)] mb-2">
           Name
