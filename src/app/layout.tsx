@@ -20,12 +20,12 @@ const SITE_URL = "https://portfolio-two-ochre-vxl9gmenfz.vercel.app"; // TODO: r
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Steven Koehl — Software Developer & USAF Technical Sergeant",
+  title: "Steven Koehl — Engineering Complex Systems. Building Practical Solutions.",
   description:
-    "Steven Koehl. USAF Technical Sergeant and software developer. Building open-source tools for aviation and brain training. Former avionics technician, current AI engineering lead. Memoria Aeterna, a literary historical fiction novel, is available to literary agents.",
+    "Steven Koehl. Aerospace engineering professional and software developer with 18 years of Air Force technical experience in systems management, engineering leadership, and independent software development.",
   openGraph: {
     type: "website",
-    title: "Steven Koehl — Software Developer & USAF Technical Sergeant",
+    title: "Steven Koehl — Engineering Complex Systems. Building Practical Solutions.",
     description: "USAF TSgt and software developer. Open-source projects, military service, and writing.",
     url: SITE_URL,
     images: [`${SITE_URL}/assets/photo.png`],
@@ -55,7 +55,7 @@ export default function RootLayout({
         {/* Inline favicon: red "S" for engineering */}
         <link
           rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23B94A36'/><text x='50' y='72' font-size='60' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'>S</text></svg>"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3864'/><text x='50' y='72' font-size='60' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'>S</text></svg>"
         />
         {/* JSON-LD structured data */}
         <script

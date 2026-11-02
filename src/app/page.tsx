@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import { featuredProjects } from "@/content/projects";
 
 export const metadata: Metadata = {
-  title: "Steven Koehl — Technical Leadership, Engineering, Software Development",
+  title: "Steven Koehl — Engineering Complex Systems. Building Practical Solutions.",
   description:
     "Steven Koehl. 18 years of Air Force technical experience in aerospace maintenance, technical operations, leadership, and process improvement — extended into software engineering, AI integration, and open-source development.",
   openGraph: {
@@ -19,28 +19,29 @@ export const metadata: Metadata = {
 
 const primaryNav = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/education", label: "Education" },
+  { href: "/about", label: "About" },
+  { href: "/writing", label: "Writing" },
 ];
 
 const capabilities = [
   {
-    group: "Software Engineering",
-    items: ["TypeScript", "JavaScript", "React", "Next.js", "Python", "Web applications", "Progressive web apps"],
+    group: "Engineering",
+    items: ["Aerospace systems", "Avionics", "Electronics diagnostics", "Systems engineering", "Maintenance and reliability", "Technical documentation", "Quality assurance"],
+  },
+  {
+    group: "Software Development",
+    items: ["Python", "TypeScript", "JavaScript", "React", "Next.js", "C++", "Application architecture"],
   },
   {
     group: "Infrastructure & Systems",
-    items: ["Linux", "Docker", "Self-hosted infrastructure", "Networking", "Reverse proxies", "Cloud deployment", "Data management"],
+    items: ["Linux", "Docker", "Networking", "Cloud deployment", "Self-hosted infrastructure", "Systems administration"],
   },
   {
-    group: "AI & Automation",
-    items: ["AI integration", "Workflow automation", "OCR", "Local AI tools", "AI-assisted development"],
-  },
-  {
-    group: "Engineering & Technical Operations",
-    items: ["Aerospace maintenance", "Avionics", "Electronics diagnostics", "Technical documentation", "Quality assurance", "Program management"],
+    group: "Leadership & Operations",
+    items: ["Technical program management", "Contract oversight", "Resource management", "Process improvement", "Workforce development", "Training and quality management"],
   },
 ];
 
@@ -58,7 +59,7 @@ export default function HomePage() {
             <div>
               <ScrollReveal>
                 <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
-                  Technical Leadership. Engineering Experience. Software Development.
+                  Engineering Complex Systems. Building Practical Solutions.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
@@ -71,12 +72,12 @@ export default function HomePage() {
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p className="text-[17px] text-[var(--color-text-muted)] max-w-[560px] leading-relaxed mb-4">
-                  I&apos;m Steven Koehl, an Air Force technical professional, engineer, and software developer. I bring 18 years of experience in aerospace maintenance, technical operations, leadership, and process improvement into the software and engineering projects I build.
+                  I&apos;m an aerospace engineering professional and software developer with 18 years of experience in technical operations, systems management, and engineering leadership. My background combines hands-on technical experience, engineering education, organizational leadership, and independent software development. I specialize in solving complex technical problems, improving operational processes, and building practical solutions.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.25}>
                 <p className="text-[13px] font-bold uppercase tracking-[2px] text-[var(--color-text-muted)] mb-10">
-                  U.S. Air Force Technical Sergeant &middot; M.S. Aeronautical Engineering &middot; Transitioning to civilian employment (SkillBridge)
+                  U.S. Air Force Technical Sergeant &middot; M.S. Aeronautical Engineering &middot; Engineering &amp; Technical Leadership (primary) &middot; Software &amp; Emerging Technology (secondary)
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.3}>
@@ -164,6 +165,52 @@ export default function HomePage() {
           </div>
         </section>
 
+
+        {/* Selected professional achievements */}
+        <section className="px-6 py-24">
+          <div className="mx-auto max-w-[1100px]">
+            <ScrollReveal>
+              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[var(--color-accent)] mb-5">
+                Selected Professional Achievements
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-[clamp(28px,4vw,40px)] font-black tracking-[-1px] mb-12">
+                Measurable outcomes in demanding environments
+              </h2>
+            </ScrollReveal>
+
+            <div className="space-y-10">
+              {[
+                {
+                  title: "$35M equipment and asset management responsibility",
+                  body: "Orchestrated a tri-functional management strategy synchronizing Technical Order distribution, product improvement, and contract oversight for a $35M fleet. Managed a 5,000-item Technical Order library with 98% audit accuracy and oversaw a $2M service contract with 100% Performance Work Statement adherence.",
+                },
+                {
+                  title: "$7M in recovered fleet costs",
+                  body: "Served as primary liaison to Air Force Materiel Command for the Joint Deficiency Reporting System. Investigated and submitted 140 Product Quality Deficiency Reports, directly recovering $7M in costs and driving fleet-wide safety modifications across multiple aircraft systems.",
+                },
+                {
+                  title: "800+ students trained at 92% pass rate",
+                  body: "Authored and delivered 300 hours of instructional material on complex electronics, micro-miniature soldering, and component-level diagnostics. Trained 800+ students annually, maintaining a 92% pass rate and zero lab safety mishaps.",
+                },
+                {
+                  title: "AI developmental lead for maintenance workflows",
+                  body: "Leading Fairchild AFB's exploration of AI tools for aerospace maintenance workflows, focused on improving mission capability rates and reducing downtime on non-mission-capable assets.",
+                },
+              ].map((a, i) => (
+                <ScrollReveal key={a.title} delay={i * 0.06}>
+                  <article className="border-l-2 border-[var(--color-accent)] pl-6">
+                    <h3 className="text-lg font-bold mb-2">{a.title}</h3>
+                    <p className="text-[15px] text-[var(--color-text-muted)] leading-relaxed">
+                      {a.body}
+                    </p>
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
         {/* Selected projects */}
         <section className="px-6 py-24">
           <div className="mx-auto max-w-[1100px]">

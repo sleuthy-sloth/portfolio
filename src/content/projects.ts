@@ -59,7 +59,7 @@ export const projects: Project[] = [
     ],
     challenges: [
       { title: "Pixel fidelity vs. speed", body: "A viewer that is slightly wrong is worse than no viewer. Fidelity tests against ground truth catch quiet regressions from compression or upgrades." },
-      { title: "Interaction speed", body: "Re-windowing a 512² frame must stay under the 16.7 ms frame budget. The spike measured 0.34 ms, two orders of magnitude of headroom." },
+      { title: "Interaction speed", body: "Re-windowing a 512² frame must stay under the 16.7 ms frame budget. The spike measured 0.34 ms, approximately 49 times faster than the budget." },
     ],
     results: [
       "Real, working, test-backed viewer state available immediately after opening a folder.",
