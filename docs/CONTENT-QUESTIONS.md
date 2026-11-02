@@ -36,3 +36,13 @@ Facts that need Steven's confirmation before publishing. Do not invent; continue
 21. /now page: not in new IA. Keep as secondary (footer) or remove entirely?
 22. Writing section: brief says small footer link sufficient; confirm no nav prominence. Keep /writing and /writing/excerpt.
 23. Iron Storm (Godot RTS): mention as "in progress" or omit from portfolio?
+
+## Decisions made by agent (best judgement)
+
+- Domain: not purchased yet. All URLs use the Vercel subdomain placeholder; update in one pass once the domain is chosen.
+- Email: publish spkoehl@gmail.com as the professional contact (single address). Proton address retained only on the Writing page for literary inquiries.
+- Resume PDF: copied existing cv.pdf to public/assets/Steven-Koehl-Resume.pdf so the download works. Replace with the verified final PDF when available.
+- Live demo links: retained existing links (NeuralPulse, 92 AMXS Tracker). Verify neuralpulse.app ownership before relying on it; GitHub links are authoritative.
+- Metrics: retained documented figures ($35M, $7M, 800+ students, etc.) as published on the prior site; flag for verification.
+- /now page and Iron Storm: kept /now as a secondary route (not in primary nav). Iron Storm not mentioned.
+- Cloudflare Pages: config prepared (_redirects, _headers, static export). DNS/domain cutover left for Steven's approval; Vercel remains the live host.
