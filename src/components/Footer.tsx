@@ -18,12 +18,6 @@ export default function Footer() {
           Gmail
         </a>
         <a
-          href="mailto:steven.koehl@proton.me"
-          className="inline-block text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-2 min-h-[44px] min-w-[44px]"
-        >
-          Proton Mail
-        </a>
-        <a
           href="https://www.linkedin.com/in/steven-koehl"
           target="_blank"
           rel="noopener noreferrer"
@@ -39,6 +33,12 @@ export default function Footer() {
         >
           GitHub
         </a>
+        <Link
+          href="/lab"
+          className="inline-block text-[13px] font-medium text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-2 min-h-[44px] min-w-[44px]"
+        >
+          Lab
+        </Link>
         <Link
           href="/writing"
           className="inline-block text-[13px] font-medium text-[var(--color-gold)] hover:text-[var(--color-gold-light)] transition-colors py-2 min-h-[44px] min-w-[44px]"

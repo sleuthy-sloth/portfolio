@@ -1,15 +1,28 @@
+export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://portfolio-two-ochre-vxl9gmenfz.vercel.app";
-
-  return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
-    { url: `${baseUrl}/writing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/writing/excerpt`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}/work/neuralpulse`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/work/92-amxs-tracker`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/work/opennarrator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/now`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+  const baseUrl = "https://portfolio-two-ochre-vxl9gmenfz.vercel.app"; // TODO: final domain
+  const routes = [
+    "",
+    "/about",
+    "/experience",
+    "/projects",
+    "/projects/clivus",
+    "/projects/verbalibera",
+    "/projects/opennarrator",
+    "/projects/neuralpulse",
+    "/projects/92-amxs-tracker",
+    "/resume",
+    "/contact",
+    "/writing",
+    "/writing/excerpt",
+    "/lab",
   ];
+  return routes.map((r) => ({
+    url: `${baseUrl}${r}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: r === "" ? 1 : 0.7,
+  }));
 }

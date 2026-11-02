@@ -21,7 +21,11 @@ interface NavLink {
   crossAccent?: "writing" | "engineering";
 }
 
-export default function Nav({ links }: { links?: NavLink[] }) {
+interface NavProps {
+  links?: NavLink[];
+  resumeHref?: string;
+}
+export default function Nav({ links, resumeHref }: NavProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -38,7 +42,7 @@ export default function Nav({ links }: { links?: NavLink[] }) {
 
         {/* Desktop nav links */}
         {links && links.length > 0 && (
-          <ul className="hidden md:flex gap-8">
+          <ul className="hidden md:flex gap-8 items-center">
             {links.map((link) => (
               <li key={link.href}>
                 <Link
@@ -55,6 +59,16 @@ export default function Nav({ links }: { links?: NavLink[] }) {
                 </Link>
               </li>
             ))}
+            {resumeHref && (
+              <li>
+                <Link
+                  href={resumeHref}
+                  className="inline-block bg-[var(--color-accent)] text-white px-4 py-2 text-[11px] font-bold uppercase tracking-[2px] hover:opacity-85 transition-opacity"
+                >
+                  Resume
+                </Link>
+              </li>
+            )}
           </ul>
         )}
 
@@ -108,6 +122,15 @@ export default function Nav({ links }: { links?: NavLink[] }) {
               {link.label}
             </Link>
           ))}
+          {resumeHref && (
+            <Link
+              href={resumeHref}
+              className="inline-block bg-[var(--color-accent)] text-white px-7 py-3 text-xs font-bold uppercase tracking-[2px]"
+              onClick={() => setOpen(false)}
+            >
+              Resume
+            </Link>
+          )}
         </div>
       )}
     </nav>
