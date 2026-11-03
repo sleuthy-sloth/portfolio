@@ -53,6 +53,13 @@ export default function ResumePage() {
                 >
                   Download PDF (Steven-Koehl-Resume.pdf)
                 </a>
+                <a
+                  href="/assets/Steven-Koehl-Resume.docx"
+                  download
+                  className="inline-block border-2 border-[var(--color-border)] text-[var(--color-text-muted)] px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:border-[var(--color-text)] hover:text-[var(--color-text)] transition-colors"
+                >
+                  Download DOCX (Steven-Koehl-Resume.docx)
+                </a>
                 <Link
                   href="/experience"
                   className="inline-block border-2 border-[var(--color-border)] text-[var(--color-text-muted)] px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:border-[var(--color-text)] hover:text-[var(--color-text)] transition-colors"
