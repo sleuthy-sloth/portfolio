@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resume } from "@/content/resume";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/resume" },
@@ -34,19 +35,19 @@ export default function ResumePage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h1 className="text-[clamp(32px,5vw,52px)] font-black tracking-[-1px] mb-6">
-                Steven Koehl
+                {resume.name}
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-[17px] text-[var(--color-text-muted)] leading-relaxed mb-8 max-w-[720px]">
-                Technical Sergeant, U.S. Air Force &middot; M.S. Aeronautical Engineering, Embry-Riddle &middot; Transitioning to civilian employment via DoD SkillBridge.
+                {resume.title} &middot; M.S. Aeronautical Engineering, Embry-Riddle &middot; Transitioning to civilian employment via DoD SkillBridge.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <div className="flex flex-wrap gap-3 mb-12">
                 <a
-                  href="/assets/Steven-Koehl-Resume.pdf"
+                  href={resume.pdfPath}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-[var(--color-accent)] text-white px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:opacity-85 transition-opacity"
@@ -54,7 +55,7 @@ export default function ResumePage() {
                   Download PDF (Steven-Koehl-Resume.pdf)
                 </a>
                 <a
-                  href="/assets/Steven-Koehl-Resume.docx"
+                  href={resume.docxPath}
                   download
                   className="inline-block border-2 border-[var(--color-border)] text-[var(--color-text-muted)] px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:border-[var(--color-text)] hover:text-[var(--color-text)] transition-colors"
                 >
@@ -77,7 +78,7 @@ export default function ResumePage() {
                     Summary
                   </h2>
                   <p className="text-[15px] text-[var(--color-text-muted)] leading-relaxed">
-                    Experienced technical professional with 18 years of Air Force service spanning aerospace maintenance, circuit-level diagnostics, technical program management, quality and deficiency reporting, technical documentation, contract oversight, instruction, and AI integration. M.S. in Aeronautical Engineering. Building open-source software through DoD SkillBridge ahead of June 2028 retirement.
+                    {resume.summary}
                   </p>
                 </section>
               </ScrollReveal>
@@ -88,22 +89,12 @@ export default function ResumePage() {
                     Technical skills
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[14px] text-[var(--color-text-muted)]">
-                    <div>
-                      <p className="font-bold text-[var(--color-text)] mb-1">Software</p>
-                      <p>TypeScript, JavaScript, React, Next.js, Python, web applications, PWAs</p>
-                    </div>
-                    <div>
-                      <p className="font-bold text-[var(--color-text)] mb-1">Infrastructure</p>
-                      <p>Linux, Docker, self-hosted infrastructure, networking, reverse proxies, cloud deployment</p>
-                    </div>
-                    <div>
-                      <p className="font-bold text-[var(--color-text)] mb-1">AI &amp; Automation</p>
-                      <p>AI integration, workflow automation, OCR, local AI tools, AI-assisted development</p>
-                    </div>
-                    <div>
-                      <p className="font-bold text-[var(--color-text)] mb-1">Engineering &amp; Operations</p>
-                      <p>Aerospace maintenance, avionics, electronics diagnostics, technical documentation, quality assurance, program management</p>
-                    </div>
+                    {resume.skills.map((group) => (
+                      <div key={group.label}>
+                        <p className="font-bold text-[var(--color-text)] mb-1">{group.label}</p>
+                        <p>{group.items}</p>
+                      </div>
+                    ))}
                   </div>
                 </section>
               </ScrollReveal>
@@ -114,7 +105,7 @@ export default function ResumePage() {
                     Education
                   </h2>
                   <p className="text-[15px] text-[var(--color-text-muted)]">
-                    Master of Science in Aeronautical Engineering — Embry-Riddle Aeronautical University
+                    {resume.education}
                   </p>
                 </section>
               </ScrollReveal>
@@ -125,13 +116,13 @@ export default function ResumePage() {
                     Contact
                   </h2>
                   <div className="flex flex-wrap gap-4 text-[14px]">
-                    <a href="mailto:contact@stevenkoehl.com" className="text-[var(--color-accent)] hover:underline">
-                      contact@stevenkoehl.com
+                    <a href={`mailto:${resume.contact.email}`} className="text-[var(--color-accent)] hover:underline">
+                      {resume.contact.email}
                     </a>
-                    <a href="https://www.linkedin.com/in/steven-koehl" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline">
+                    <a href={resume.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline">
                       LinkedIn
                     </a>
-                    <a href="https://github.com/sleuthy-sloth" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline">
+                    <a href={resume.contact.github} target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline">
                       GitHub
                     </a>
                   </div>

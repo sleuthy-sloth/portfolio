@@ -110,6 +110,8 @@ export const projects: Project[] = [
     category: "Developer Tools / Audio",
     status: "Released",
     oneLine: "Open-source audiobook factory: convert any ebook to a chaptered M4B using open-source TTS.",
+    // TODO(audit-2026-11-03): pyproject.toml reports version 0.1.0 but git tag is v0.2.0.
+    // Align package version with the tagged release before the next portfolio update.
     description:
       "OpenNarrator converts EPUB, TXT, and DOCX ebooks into chaptered M4B audiobooks using the Kokoro TTS engine (82M params, Apache 2.0). Web UI, CLI, and GitHub Action. No API keys, no cloud services, no vendor lock-in. Installs via Homebrew or pip.",
     technologies: ["Python 3.11+", "Kokoro TTS", "FastAPI", "Typer CLI", "ffmpeg", "pytest"],
@@ -146,6 +148,8 @@ export const projects: Project[] = [
     name: "NeuralPulse",
     category: "Health / Brain Training",
     status: "Active",
+    // TODO(audit-2026-11-03): package.json reports version 0.1.0 but git tag is v1.0.0.
+    // Align package version with the tagged release before the next portfolio update.
     oneLine: "Open-source brain training web app: 13 games, daily challenges, stats dashboard.",
     description:
       "NeuralPulse is a free, open-source brain training web app comparable to Elevate or Lumosity. 13 games across memory, attention, speed, and problem-solving. Daily challenges (Wordle-style), stats dashboard with radar charts and calendar heatmap. Offline-first PWA with optional Supabase sync.",
