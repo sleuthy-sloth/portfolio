@@ -2,7 +2,7 @@
 
 Professional personal website and portfolio supporting Steven Koehl's transition from the United States Air Force into civilian employment.
 
-Live: https://portfolio-two-ochre-vxl9gmenfz.vercel.app (temporary; custom domain to be attached)
+Live: https://stevenkoehl.com
 
 ## Tech Stack
 
@@ -45,6 +45,7 @@ npm run deploy    # build, then upload out/ to Cloudflare
 - `public/_headers` and `public/_redirects` are copied into `out/` and honored by Workers static assets.
 - `wrangler.jsonc` `name` must match the existing Worker name so the deployed URL stays stable.
 - Custom domain and DNS changes require Steven's approval.
+- Pushing to `master` triggers `.github/workflows/deploy.yml`, which builds and deploys to Cloudflare automatically.
 
 ## Updating content
 

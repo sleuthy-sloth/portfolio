@@ -12,7 +12,16 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   },
+  // Keep the custom domain attached on every deploy. Without this, a deploy
+  // that runs in a fresh environment (CI) can leave stevenkoehl.com detached
+  // and fall back to the registrar's parking page.
+  "routes": [
+    { "pattern": "stevenkoehl.com", "custom_domain": true }
+  ],
   "observability": {
     "enabled": true
-  }
+  },
+  // Keep the workers.dev subdomain available for previews/debugging.
+  "workers_dev": true,
+  "preview_urls": true
 }
