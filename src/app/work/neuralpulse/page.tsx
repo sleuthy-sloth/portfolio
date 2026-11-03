@@ -83,7 +83,7 @@ export default function NeuralPulsePage() {
               {/* Screenshot */}
               <div className="border border-[var(--color-border)] rounded overflow-hidden shadow-lg">
                 <Image
-                  src="/assets/neuralpulse-screenshot.png"
+                  src="/assets/neuralpulse-screenshot.webp"
                   alt="NeuralPulse brain training app dashboard and game screens"
                   width={1200}
                   height={675}

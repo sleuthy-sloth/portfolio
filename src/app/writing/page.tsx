@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
+import type { Metadata } from "next";
 
 /**
  * Writing page (/writing) — Memoria Aeterna book showcase.
@@ -10,6 +11,13 @@ import Image from "next/image";
  * Uses the writing identity (gold accent, midnight blue background, serif font).
  * Nav links include cross-link to Engineering.
  */
+
+export const metadata: Metadata = {
+  title: "Writing — Steven Koehl",
+  description:
+    "Memoria Aeterna, a novel spanning 982 years of Byzantine and Ottoman history, plus an excerpt and contact for literary inquiries.",
+  alternates: { canonical: "/writing" },
+};
 
 export default function WritingPage() {
   const navLinks = [
@@ -35,7 +43,7 @@ export default function WritingPage() {
             <ScrollReveal delay={0.1}>
               <div className="md:max-w-[320px] mx-auto w-full">
                 <Image
-                  src="/assets/memoria-aeterna-cover.png"
+                  src="/assets/memoria-aeterna-cover.webp"
                   alt="Memoria Aeterna book cover"
                   width={640}
                   height={960}

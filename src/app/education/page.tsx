@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/education" },
   title: "Education — Steven Koehl",
   description: "Academic qualifications, relevant coursework, certifications, and professional development of Steven Koehl.",
 };

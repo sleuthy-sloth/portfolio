@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/lab" },
   title: "The Lab — Steven Koehl",
   description:
     "Homelab and self-hosted infrastructure: Raspberry Pi, Linux, Docker, Caddy, Cloudflare, Tailscale, and self-hosted services.",

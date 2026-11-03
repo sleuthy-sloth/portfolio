@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/projects" },
   title: "Projects — Steven Koehl",
   description:
     "Software projects, engineering and operational systems, AI and automation work, and open-source contributions by Steven Koehl.",

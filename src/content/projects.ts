@@ -79,7 +79,7 @@ export const projects: Project[] = [
       { href: "https://verbalibera.vercel.app", label: "Live Demo", external: true },
       { href: "https://github.com/sleuthy-sloth/VerbaLibera", label: "Source Code", external: true },
     ],
-    screenshot: { src: "/assets/verbalibera-home.png", alt: "VerbaLibera landing page" },
+    screenshot: { src: "/assets/verbalibera-home.webp", alt: "VerbaLibera landing page" },
     featured: true,
     problem:
       "Most language apps optimize for engagement (timers, streaks, lost hearts) rather than understanding. Learners memorize phrases without learning to construct sentences. The Language Transfer method puts pattern recognition first.",
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     links: [
       { href: "https://github.com/sleuthy-sloth/NeuralPulse", label: "Source Code", external: true },
     ],
-    screenshot: { src: "/assets/neuralpulse-screenshot.png", alt: "NeuralPulse dashboard and game screens" },
+    screenshot: { src: "/assets/neuralpulse-screenshot.webp", alt: "NeuralPulse dashboard and game screens" },
     featured: true,
     problem:
       "Brain training apps charge $5-15/month for mini-games with progress tracking. I wanted to prove you can build something comparable — radar charts, calendar heatmaps, streak tracking, daily challenges, offline support — and give it away.",
@@ -192,7 +192,7 @@ export const projects: Project[] = [
       { href: "https://sleuthy-sloth.github.io/92-AMXS-Tracker/", label: "Live Demo", external: true },
       { href: "https://github.com/sleuthy-sloth/92-AMXS-Tracker", label: "Source Code", external: true },
     ],
-    screenshot: { src: "/assets/92amxs-screenshot.png", alt: "92 AMXS Tracker maintenance dashboard" },
+    screenshot: { src: "/assets/92amxs-screenshot.webp", alt: "92 AMXS Tracker maintenance dashboard" },
     featured: true,
     problem:
       "Aircraft maintenance squadrons run on paperwork: AFTO Form 781s, status boards, TCTO tracking, training records scattered across binders, logbooks, and spreadsheets. When a commander asks for fleet status, someone walks the flightline to check.",

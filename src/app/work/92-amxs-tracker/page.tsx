@@ -86,7 +86,7 @@ export default function AmxsTrackerPage() {
               {/* Screenshot */}
               <div className="border border-[var(--color-border)] rounded overflow-hidden shadow-lg">
                 <Image
-                  src="/assets/92amxs-screenshot.png"
+                  src="/assets/92amxs-screenshot.webp"
                   alt="92 AMXS Tracker maintenance dashboard"
                   width={1200}
                   height={675}

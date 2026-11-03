@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About — Steven Koehl",
   description:
     "Professional biography of Steven Koehl: Air Force avionics technician, engineer, and software developer transitioning to civilian employment.",
@@ -31,7 +32,7 @@ export default function AboutPage() {
             <ScrollReveal>
               <div className="relative aspect-square bg-[var(--color-border)] overflow-hidden max-w-[260px] mx-auto md:mx-0">
                 <Image
-                  src="/assets/photo.png"
+                  src="/assets/photo.webp"
                   alt="Steven Koehl"
                   fill
                   className="object-cover"

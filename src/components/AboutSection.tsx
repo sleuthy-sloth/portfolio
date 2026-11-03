@@ -19,7 +19,7 @@ export default function AboutSection() {
           <ScrollReveal>
             <div className="relative aspect-square bg-[var(--color-border)] rounded overflow-hidden w-full max-w-[280px] mx-auto md:mx-0">
               <Image
-                src="/assets/photo.png"
+                src="/assets/photo.webp"
                 alt="Steven Koehl"
                 fill
                 className="object-cover"

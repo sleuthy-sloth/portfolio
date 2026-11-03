@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Steven Koehl — Engineering Complex Systems. Building Practical Solutions.",
     description: "USAF TSgt and software developer. Open-source projects, military service, and writing.",
     url: SITE_URL,
-    images: [`${SITE_URL}/assets/photo.png`],
+    images: [`${SITE_URL}/assets/photo-og.jpg`],
   },
 };
 

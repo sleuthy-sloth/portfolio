@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/now" },
   title: "Now — Steven Koehl | Current Projects & Focus",
   description:
     "What Steven Koehl is doing now: SkillBridge transition, building NeuralPulse and the 92 AMXS Tracker, writing Memoria Aeterna, and learning TypeScript and AI/ML integration.",

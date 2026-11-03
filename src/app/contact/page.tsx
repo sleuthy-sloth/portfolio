@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact — Steven Koehl",
   description: "Professional contact information for Steven Koehl.",
 };

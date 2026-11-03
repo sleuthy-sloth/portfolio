@@ -18,7 +18,7 @@ const SOFTWARE_PROJECTS: Project[] = [
       "Open-source brain training web app. Think Elevate or Lumosity, but free and playable in your browser. 13 brain games, daily challenges (Wordle-style), stats dashboard with radar charts and calendar heatmap. Offline-first PWA with optional cloud sync via Supabase.",
     tags: ["Next.js 16", "TypeScript", "Supabase", "Tailwind CSS", "PWA"],
     screenshot: {
-      src: "/assets/neuralpulse-screenshot.png",
+      src: "/assets/neuralpulse-screenshot.webp",
       alt: "NeuralPulse brain training app screenshot",
     },
     links: [
@@ -44,7 +44,7 @@ const SOFTWARE_PROJECTS: Project[] = [
       "Full-stack maintenance management platform for the 92nd Aircraft Maintenance Squadron. Replaces paper logbooks and spreadsheets with a real-time command center. 16 pages, AI-powered OCR scanning of AF Forms, role-based access control, offline PWA support.",
     tags: ["React 19", "TypeScript", "Firebase", "AI / OCR", "PWA"],
     screenshot: {
-      src: "/assets/92amxs-screenshot.png",
+      src: "/assets/92amxs-screenshot.webp",
       alt: "92 AMXS Tracker dashboard screenshot",
     },
     links: [

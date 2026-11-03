@@ -7,13 +7,17 @@ import type { Metadata } from "next";
 import { featuredProjects } from "@/content/projects";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/" },
   title: "Steven Koehl — Engineering Complex Systems. Building Practical Solutions.",
   description:
     "Steven Koehl. 18 years of Air Force technical experience in aerospace maintenance, technical operations, leadership, and process improvement — extended into software engineering, AI integration, and open-source development.",
   openGraph: {
+    type: "website",
+    url: "/",
     title: "Steven Koehl — Technical Leadership. Engineering Experience. Software That Solves Problems.",
     description:
       "Experienced technical professional transitioning from the U.S. Air Force into engineering, software development, and systems improvement.",
+    images: ["/assets/photo-og.jpg"],
   },
 };
 
@@ -118,7 +122,7 @@ export default function HomePage() {
             <ScrollReveal delay={0.2}>
               <div className="relative aspect-[4/5] bg-[var(--color-border)] overflow-hidden max-w-[260px] mx-auto md:mx-0 md:ml-auto">
                 <Image
-                  src="/assets/photo.png"
+                  src="/assets/photo.webp"
                   alt="Steven Koehl, professional portrait"
                   fill
                   className="object-cover"
@@ -391,7 +395,7 @@ export default function HomePage() {
             <ScrollReveal>
               <div className="relative aspect-square bg-[var(--color-border)] overflow-hidden max-w-[260px] mx-auto md:mx-0">
                 <Image
-                  src="/assets/photo.png"
+                  src="/assets/photo.webp"
                   alt="Steven Koehl"
                   fill
                   className="object-cover"

@@ -13,6 +13,7 @@ import ScrollReveal from "@/components/ScrollReveal";
  */
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/writing/excerpt" },
   title: "Memoria Aeterna — Letting the Palace Fall (Chapter 1)",
   description:
     "Read the first chapter of Memoria Aeterna, a literary historical fiction novel about an immortal man searching for the woman he loves across 982 years of Byzantine and Ottoman history.",
