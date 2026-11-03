@@ -6,7 +6,7 @@ Live: https://portfolio-two-ochre-vxl9gmenfz.vercel.app (temporary; custom domai
 
 ## Tech Stack
 
-Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion. Static export deployed to Cloudflare Pages.
+Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion. Static export deployed to Cloudflare Workers (static assets).
 
 ## Local development
 
@@ -26,12 +26,24 @@ npm run build
 
 Output is written to `out/`. This is a fully static site with no server runtime.
 
-## Cloudflare Pages deployment
+## Cloudflare Workers deployment
 
-- Framework preset: Next.js (Static HTML Export)
-- Build command: `npx next build`
-- Build output directory: `out`
-- Connect the GitHub repository to Cloudflare Pages for automatic production deploys from `main` and preview deploys for pull requests.
+The site is a static export, so it deploys as a Workers static-assets project: no server
+runtime, no OpenNext adapter, no Next.js server bundle. `wrangler.jsonc` points Wrangler at
+`out/`.
+
+```bash
+npm run preview   # build, then serve out/ locally on http://localhost:8787
+npm run deploy    # build, then upload out/ to Cloudflare
+```
+
+- Framework preset: **None** (do not use the Next.js preset, which injects OpenNext)
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Root directory: `/`
+- Node version: 22
+- `public/_headers` and `public/_redirects` are copied into `out/` and honored by Workers static assets.
+- `wrangler.jsonc` `name` must match the existing Worker name so the deployed URL stays stable.
 - Custom domain and DNS changes require Steven's approval.
 
 ## Updating content
@@ -40,7 +52,7 @@ Output is written to `out/`. This is a fully static site with no server runtime.
 - Experience: edit `src/app/experience/page.tsx`.
 - Resume: update web copy in `src/app/resume/page.tsx` and replace `public/assets/Steven-Koehl-Resume.pdf`.
 - Images: place in `public/assets/` and reference with `/assets/...`. Optimize before committing.
-- Redirects: edit `public/_redirects` (Cloudflare Pages format).
+- Redirects: edit `public/_redirects` (Workers static assets format).
 
 ## License
 

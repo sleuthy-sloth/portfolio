@@ -1,0 +1,18 @@
+{
+  // Cloudflare Workers static assets. This site is a Next.js static export
+  // (next.config.ts sets output: "export"), so there is no server runtime and
+  // no OpenNext adapter: `next build` writes out/ and Wrangler uploads it.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-11-03",
+  "assets": {
+    // Next.js emits out/about.html (not out/about/index.html) because
+    // trailingSlash is false, so auto-trailing-slash is the matching mode.
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

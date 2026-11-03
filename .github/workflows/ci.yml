@@ -31,3 +31,7 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      # Catches wrangler.jsonc / out/ drift without needing Cloudflare credentials.
+      - name: Validate Wrangler config
+        run: npx wrangler deploy --dry-run
