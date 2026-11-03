@@ -117,8 +117,8 @@ export default function ResumePage() {
                     Contact
                   </h2>
                   <div className="flex flex-wrap gap-4 text-[14px]">
-                    <a href="mailto:spkoehl@gmail.com" className="text-[var(--color-accent)] hover:underline">
-                      spkoehl@gmail.com
+                    <a href="mailto:contact@stevenkoehl.com" className="text-[var(--color-accent)] hover:underline">
+                      contact@stevenkoehl.com
                     </a>
                     <a href="https://www.linkedin.com/in/steven-koehl" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline">
                       LinkedIn

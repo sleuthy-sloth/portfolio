@@ -200,7 +200,7 @@ export default function WritingPage() {
             <ScrollReveal delay={0.2}>
               <div className="flex flex-wrap gap-4 justify-center">
                 <a
-                  href="mailto:steven.koehl@proton.me"
+                  href="mailto:contact@stevenkoehl.com"
                   className="inline-block bg-[var(--color-gold)] text-white px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:bg-[var(--color-gold-light)] transition-colors"
                 >
                   Email Steven

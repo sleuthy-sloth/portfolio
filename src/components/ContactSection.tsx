@@ -24,16 +24,10 @@ export default function ContactSection() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center mb-8">
             <a
-              href="mailto:spkoehl@gmail.com"
+              href="mailto:contact@stevenkoehl.com"
               className="inline-block border-2 border-[var(--color-accent)] text-[var(--color-accent)] px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:bg-[var(--color-accent)] hover:text-white transition-colors"
             >
-              Gmail
-            </a>
-            <a
-              href="mailto:steven.koehl@proton.me"
-              className="inline-block border-2 border-[var(--color-accent)] text-[var(--color-accent)] px-7 py-[14px] text-xs font-bold uppercase tracking-[2px] hover:bg-[var(--color-accent)] hover:text-white transition-colors"
-            >
-              Proton Mail
+              Email
             </a>
             <a
               href="https://www.linkedin.com/in/steven-koehl"

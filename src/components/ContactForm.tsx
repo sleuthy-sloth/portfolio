@@ -41,7 +41,7 @@ export default function ContactForm() {
 
     const subject = encodeURIComponent(`Portfolio contact from ${name}`);
     const body = encodeURIComponent(`From: ${name} <${email}>\n\n${message}`);
-    const mailto = `mailto:spkoehl@gmail.com?subject=${subject}&body=${body}`;
+    const mailto = `mailto:contact@stevenkoehl.com?subject=${subject}&body=${body}`;
     window.location.href = mailto;
     setState({ success: true, error: undefined });
     setPending(false);
@@ -54,7 +54,7 @@ export default function ContactForm() {
         <p className="text-base text-[var(--color-text-muted)]">
           If nothing happened,{" "}
           <a
-            href="mailto:spkoehl@gmail.com"
+            href="mailto:contact@stevenkoehl.com"
             className="text-[var(--color-accent)] hover:underline"
           >
             click here to email directly

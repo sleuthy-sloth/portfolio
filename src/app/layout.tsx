@@ -69,7 +69,7 @@ export default function RootLayout({
                   name: "Steven Koehl",
                   givenName: "Steven",
                   familyName: "Koehl",
-                  email: "spkoehl@gmail.com",
+                  email: "contact@stevenkoehl.com",
                   jobTitle: "Technical Sergeant",
                   affiliation: {
                     "@type": "Organization",

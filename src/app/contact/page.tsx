@@ -57,10 +57,10 @@ export default function ContactPage() {
                   </h2>
                   <div className="space-y-3 text-[14px]">
                     <a
-                      href="mailto:spkoehl@gmail.com"
+                      href="mailto:contact@stevenkoehl.com"
                       className="block text-[var(--color-accent)] hover:underline"
                     >
-                      spkoehl@gmail.com
+                      contact@stevenkoehl.com
                     </a>
                     <a
                       href="https://www.linkedin.com/in/steven-koehl"

@@ -149,9 +149,9 @@ const COMMANDS: Command[] = [
   {
     id: "email",
     label: "Send Email",
-    description: "spkoehl@gmail.com",
+    description: "contact@stevenkoehl.com",
     icon: "📧",
-    href: "mailto:spkoehl@gmail.com",
+    href: "mailto:contact@stevenkoehl.com",
     kind: "external",
     category: "External",
   },
