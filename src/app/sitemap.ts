@@ -2,7 +2,7 @@ export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://portfolio-two-ochre-vxl9gmenfz.vercel.app"; // TODO: final domain
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://stevenkoehl.com";
   const routes = [
     "",
     "/about",

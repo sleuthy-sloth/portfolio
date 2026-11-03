@@ -16,7 +16,7 @@ const sourceSerif = Source_Serif_4({
   weight: ["400", "600"],
 });
 
-const SITE_URL = "https://portfolio-two-ochre-vxl9gmenfz.vercel.app"; // TODO: replace with final custom domain
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://stevenkoehl.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -91,7 +91,7 @@ export default function RootLayout({
                 {
                   "@type": "WebSite",
                   name: "Steven Koehl — Portfolio",
-                  url: "https://portfolio-two-ochre-vxl9gmenfz.vercel.app",
+                  url: SITE_URL,
                   description:
                     "USAF Technical Sergeant and software developer. Open-source projects and engineering portfolio.",
                 },
