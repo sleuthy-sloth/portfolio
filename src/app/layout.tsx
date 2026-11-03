@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "Steven Koehl — Engineering Complex Systems. Building Practical Solutions.",
   description:
     "Steven Koehl. Aerospace engineering professional and software developer with 18 years of Air Force technical experience in systems management, engineering leadership, and independent software development.",
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     title: "Steven Koehl — Engineering Complex Systems. Building Practical Solutions.",
@@ -52,11 +55,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Inline favicon: red "S" for engineering */}
-        <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F3864'/><text x='50' y='72' font-size='60' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'>S</text></svg>"
-        />
         {/* JSON-LD structured data */}
         <script
           type="application/ld+json"
