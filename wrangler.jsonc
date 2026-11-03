@@ -4,6 +4,7 @@
   // no OpenNext adapter: `next build` writes out/ and Wrangler uploads it.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "portfolio",
+  "main": "./worker.js",
   "compatibility_date": "2026-11-03",
   "assets": {
     // Next.js emits out/about.html (not out/about/index.html) because
@@ -16,7 +17,8 @@
   // that runs in a fresh environment (CI) can leave stevenkoehl.com detached
   // and fall back to the registrar's parking page.
   "routes": [
-    { "pattern": "stevenkoehl.com", "custom_domain": true }
+    { "pattern": "stevenkoehl.com", "custom_domain": true },
+    { "pattern": "www.stevenkoehl.com", "custom_domain": true }
   ],
   "observability": {
     "enabled": true
